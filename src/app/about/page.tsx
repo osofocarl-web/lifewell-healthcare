@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Heart, Target, Eye, Shield, UserRound, CheckCircle2, Mail, Phone } from "lucide-react";
+import { Target, Eye, CheckCircle2, Mail, Phone } from "lucide-react";
 
 export default function AboutPage() {
   return (
