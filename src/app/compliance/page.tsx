@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, Scale, FileText, Lock, Users, CheckCircle } from "lucide-react";
+import { ShieldCheck, Scale, FileText, Lock, CheckCircle } from "lucide-react";
 
 const principles = [
   { 
