@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { BookOpen, Calendar, User, ArrowRight } from "lucide-react";
+import { Calendar, User, ArrowRight } from "lucide-react";
 
 const posts = [
   {
