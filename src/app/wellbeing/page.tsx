@@ -111,7 +111,7 @@ export default function WellbeingPage() {
           <div className="flex-1">
             <h2 className="text-4xl md:text-5xl font-outfit mb-8 text-brand-gold-soft">Faith-Sensitive & Culturally Intelligent Support</h2>
             <p className="text-lg text-blue-50/90 leading-relaxed mb-10 font-medium">
-              We understand that true wellbeing involves respecting an individual's faith, cultural background, and identity. Our team is trained in cultural intelligence to ensure care that is not only professional but deeply respectful of your heritage and beliefs.
+              We understand that true wellbeing involves respecting an individual&apos;s faith, cultural background, and identity. Our team is trained in cultural intelligence to ensure care that is not only professional but deeply respectful of your heritage and beliefs.
             </p>
             <Link href="/about">
               <Button variant="secondary" className="px-10">Our Approach</Button>
