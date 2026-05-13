@@ -21,12 +21,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
-const stats = [
-  { label: "Lives Supported", value: "500+" },
-  { label: "Professional Carers", value: "120+" },
-  { label: "Community Partners", value: "15+" },
-  { label: "Satisfaction Rate", value: "99%" },
-];
+
 
 const trustReasons = [
   { title: "Compassionate Support", desc: "Care that goes beyond tasks to focus on emotional connection.", icon: Heart },
@@ -68,7 +63,7 @@ export default function HomePage() {
               Supporting Lives with <span className="text-brand-gold-soft drop-shadow-none font-bold italic">Compassion</span>, Dignity, and Wellbeing.
             </h1>
             
-            <p className="text-2xl text-blue-50/90 mb-12 max-w-2xl leading-relaxed font-medium drop-shadow-sm">
+            <p className="text-2xl text-white mb-12 max-w-2xl leading-relaxed font-medium drop-shadow-md">
               Premium domiciliary care where clinical Occupational Therapy expertise meets the heart of family-centred support.
             </p>
             
@@ -78,7 +73,7 @@ export default function HomePage() {
                   Request Care <ArrowRight size={22} />
                 </Button>
               </Link>
-              <Link href="/about">
+              <Link href="/about#clinical-leadership">
                 <Button variant="outline" className="px-10 py-5 text-lg border-white/40 text-white hover:bg-white hover:text-brand-blue backdrop-blur-sm">
                   Our Clinical Lead
                 </Button>
@@ -229,7 +224,7 @@ export default function HomePage() {
               <span className="text-brand-gold font-black uppercase tracking-[0.3em] text-sm mb-6 block">Rehabilitative Care</span>
               <h2 className="text-5xl md:text-6xl font-outfit mb-8 leading-tight text-brand-blue-dark">Supporting Independent Living</h2>
               <p className="text-xl text-text-muted mb-10 leading-relaxed font-medium">
-                Our rehabilitation assistance is led by Occupational Therapy expertise. We don't just provide care; we build confidence and help restore the skills needed for a dignified, independent life.
+                Our rehabilitation assistance is led by Occupational Therapy expertise. We don&apos;t just provide care; we build confidence and help restore the skills needed for a dignified, independent life.
               </p>
               <Link href="/services">
                 <Button variant="outline" className="px-10 py-4 border-brand-blue text-brand-blue">View Our Services</Button>
@@ -273,23 +268,52 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section (Moved Lower) */}
-      <section className="py-24 bg-brand-bg">
+      {/* Governance & Trust Section */}
+      <section className="py-24 bg-brand-bg border-t border-gray-100">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
-            {stats.map((stat, i) => (
+          <div className="flex flex-col items-center text-center mb-16">
+            <span className="text-brand-gold font-black uppercase tracking-[0.3em] text-sm mb-4 block">Trust & Governance</span>
+            <h2 className="text-4xl md:text-5xl font-outfit text-brand-blue-dark leading-tight max-w-3xl">
+              Setting the Standard for Community Care
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: "Built Around Quality & Safety", icon: ShieldCheck },
+              { title: "Preparing for CQC Registration", icon: Target },
+              { title: "Clinical Occupational Therapy Leadership", icon: Activity },
+              { title: "Person-Centred Community Care", icon: Heart }
+            ].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="text-center"
+                whileHover={{ y: -5 }}
+                className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center group transition-premium"
               >
-                <div className="text-5xl md:text-6xl font-outfit font-black text-brand-blue mb-4 tracking-tighter">{stat.value}</div>
-                <div className="text-brand-gold font-bold uppercase tracking-widest text-xs">{stat.label}</div>
+                <div className="w-16 h-16 rounded-full bg-brand-blue/5 text-brand-blue flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-premium">
+                  <item.icon size={32} />
+                </div>
+                <h3 className="text-xl font-bold text-brand-blue-dark">{item.title}</h3>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+      {/* Join Our Team CTA */}
+      <section className="py-20 bg-brand-blue">
+        <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="max-w-2xl">
+            <span className="text-brand-gold-soft font-black uppercase tracking-[0.3em] text-sm mb-4 block">Join the Lifewell Family</span>
+            <h2 className="text-4xl md:text-5xl font-outfit text-white leading-tight">We&apos;re Looking for Compassionate People</h2>
+            <p className="text-blue-100/80 mt-4 text-lg leading-relaxed font-medium">
+              If you have a passion for supporting others with dignity and care, we&apos;d love to hear from you.
+            </p>
+          </div>
+          <Link href="/careers">
+            <Button variant="secondary" className="px-10 py-5 text-lg flex items-center gap-3 whitespace-nowrap shadow-2xl">
+              <UserPlus size={22} /> Join Our Team
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
