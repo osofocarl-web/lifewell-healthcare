@@ -160,7 +160,7 @@ export default function CareersPage() {
           <div className="bg-brand-blue text-white p-16 md:w-2/5 flex flex-col justify-center">
             <h3 className="text-4xl font-outfit mb-8 text-brand-gold-soft leading-tight">Ready to Start Your Journey?</h3>
             <p className="text-blue-50/80 mb-10 leading-relaxed text-lg">
-              Submit your CV today and join a team that prioritises your wellbeing as much as our clients'.
+              Submit your CV today and join a team that prioritises your wellbeing as much as our clients&apos;.
             </p>
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-4 bg-white/10 p-4 rounded-2xl border border-white/10">
