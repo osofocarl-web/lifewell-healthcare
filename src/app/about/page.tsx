@@ -54,7 +54,7 @@ export default function AboutPage() {
       </section>
 
       {/* Clinical Leadership */}
-      <section className="py-24 border-y border-brand-bg bg-white">
+      <section id="clinical-leadership" className="py-24 border-y border-brand-bg bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <span className="text-brand-gold font-black uppercase tracking-[0.4em] text-sm mb-6 block">Professional Governance</span>
@@ -121,11 +121,11 @@ export default function AboutPage() {
                   <div>
                     <h4 className="text-sm font-black text-brand-blue uppercase tracking-widest mb-4">Clinical Contact</h4>
                     <div className="flex flex-col gap-3">
-                      <a href="mailto:Ida_kubi@hotmail.co.uk" className="flex items-center gap-3 text-brand-blue hover:text-brand-gold transition-premium font-bold">
-                        <Mail size={18} /> Ida_kubi@hotmail.co.uk
+                      <a href="mailto:info@lifewellhealthcare.org" className="flex items-center gap-3 text-brand-blue hover:text-brand-gold transition-premium font-bold">
+                        <Mail size={18} /> info@lifewellhealthcare.org
                       </a>
-                      <a href="tel:07916311377" className="flex items-center gap-3 text-brand-blue hover:text-brand-gold transition-premium font-bold">
-                        <Phone size={18} /> 07916 311377
+                      <a href="tel:+447836681815" className="flex items-center gap-3 text-brand-blue hover:text-brand-gold transition-premium font-bold">
+                        <Phone size={18} /> 07836 681815
                       </a>
                     </div>
                   </div>
