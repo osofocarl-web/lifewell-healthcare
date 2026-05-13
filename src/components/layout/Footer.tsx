@@ -26,15 +26,38 @@ export const Footer = () => {
               Supporting lives with compassion, dignity, and wellbeing. Premium UK healthcare and holistic support for your loved ones.
             </p>
             <div className="flex gap-4">
-              {[Heart, Mail, Phone, Globe].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
+              <a
+                href="https://wa.me/447836681815"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
+              >
+                <Heart size={18} />
+              </a>
+              <a
+                href="mailto:info@lifewellhealthcare.org"
+                aria-label="Email us"
+                className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
+              >
+                <Mail size={18} />
+              </a>
+              <a
+                href="tel:07836681815"
+                aria-label="Call us"
+                className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
+              >
+                <Phone size={18} />
+              </a>
+              <a
+                href="https://www.lifewellhealthcare.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Website"
+                className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
+              >
+                <Globe size={18} />
+              </a>
             </div>
           </div>
 
@@ -83,11 +106,11 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-brand-gold-soft shrink-0" size={20} />
-                <span>07836 681815</span>
+                <a href="tel:07836681815" className="hover:text-brand-gold transition-premium">07836 681815</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-brand-gold-soft shrink-0" size={20} />
-                <span>lifewellhealthcare@outlook.com</span>
+                <a href="mailto:info@lifewellhealthcare.org" className="hover:text-brand-gold transition-premium">info@lifewellhealthcare.org</a>
               </li>
             </ul>
           </div>
