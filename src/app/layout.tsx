@@ -17,10 +17,37 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lifewellhealthcare.org"),
-  title: "Lifewell Healthcare Ltd | Supporting Lives with Compassion & Dignity",
-  description: "Premium UK healthcare and wellbeing services focusing on domiciliary care, mental health support, and holistic person-centred care. Preparing for CQC registration.",
+  metadataBase: new URL("https://www.lifewellhealthcare.org"),
+  title: "Lifewell Healthcare Ltd | Compassionate Domiciliary Care & Wellbeing Support",
+  description: "Premium UK healthcare and wellbeing support built around compassion, dignity, clinical leadership, and person-centred community care.",
   keywords: ["Healthcare UK", "Domiciliary Care", "Mental Health Support", "Dementia Care", "Wellbeing Support", "Lifewell Healthcare"],
+  openGraph: {
+    title: "Lifewell Healthcare Ltd | Compassionate Domiciliary Care & Wellbeing Support",
+    description: "Premium UK healthcare and wellbeing support built around compassion, dignity, clinical leadership, and person-centred community care.",
+    url: "https://www.lifewellhealthcare.org",
+    siteName: "Lifewell Healthcare",
+    images: [
+      {
+        url: "/images/social-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Lifewell Healthcare Logo",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lifewell Healthcare Ltd | Compassionate Domiciliary Care & Wellbeing Support",
+    description: "Premium UK healthcare and wellbeing support built around compassion, dignity, clinical leadership, and person-centred community care.",
+    images: ["/images/social-preview.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
