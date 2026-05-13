@@ -11,7 +11,7 @@ export default function ContactPage() {
       <section className="container mx-auto px-6 mb-16 text-center">
         <h1 className="text-5xl md:text-6xl font-outfit mb-6 text-brand-blue-dark">Get in <span className="text-brand-blue">Touch</span></h1>
         <p className="text-xl text-text-muted max-w-3xl mx-auto leading-relaxed font-medium">
-          Whether you're looking for professional care for a loved one or have questions about our services, our clinically led team is here to help.
+          Whether you&apos;re looking for professional care for a loved one or have questions about our services, our clinically led team is here to help.
         </p>
       </section>
 
@@ -38,7 +38,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h5 className="font-bold text-brand-blue-dark">Email Us</h5>
-                    <p className="text-text-muted text-sm">lifewellhealthcare@outlook.com</p>
+                    <p className="text-text-muted text-sm">info@lifewellhealthcare.org</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
