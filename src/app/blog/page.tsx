@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Calendar, User, ArrowRight } from "lucide-react";
@@ -56,7 +55,7 @@ export default function BlogPage() {
             <span className="text-brand-gold font-bold text-sm uppercase tracking-widest mb-4">Latest Insight</span>
             <h2 className="text-4xl font-outfit mb-6 text-brand-blue-dark">Promoting Social Inclusion for the Elderly</h2>
             <p className="text-lg text-text-main mb-10 leading-relaxed font-medium">
-              Loneliness can be a significant health risk. Learn how Lifewell's companionship services are rebuilding social bridges in our communities.
+              Loneliness can be a significant health risk. Learn how Lifewell&apos;s companionship services are rebuilding social bridges in our communities.
             </p>
             <div className="flex items-center gap-6 text-sm text-text-muted mb-10">
               <div className="flex items-center gap-2 font-bold">
@@ -66,11 +65,11 @@ export default function BlogPage() {
                 <User size={16} className="text-brand-gold" /> Clinical Team
               </div>
             </div>
-            <Link href="/blog">
-              <button className="bg-brand-blue text-white px-8 py-3 rounded-full font-bold self-start hover:bg-brand-blue-dark transition-premium">
-                Read Article
-              </button>
-            </Link>
+            <div className="flex items-center gap-3 flex-wrap">
+              <span className="inline-flex items-center gap-2 bg-brand-blue/10 text-brand-blue px-5 py-2 rounded-full text-sm font-bold">
+                Coming Soon — Full article launching shortly
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -93,20 +92,16 @@ export default function BlogPage() {
                 <p className="text-sm text-text-muted mb-8 leading-relaxed flex-grow">
                    {post.excerpt}
                 </p>
-                <Link href="#" className="flex items-center gap-2 text-brand-blue font-bold text-sm group">
-                  Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
+                <span className="flex items-center gap-2 text-brand-blue/50 font-bold text-sm cursor-default">
+                  Coming Soon <ArrowRight size={16} />
+                </span>
               </div>
             </motion.div>
           ))}
         </div>
         
         <div className="mt-20 text-center">
-          <Link href="/blog">
-            <button className="bg-white border-2 border-brand-blue/20 text-brand-blue px-10 py-4 rounded-full font-bold hover:bg-brand-blue hover:text-white transition-premium shadow-sm">
-              Explore All Insights
-            </button>
-          </Link>
+          <p className="text-text-muted font-medium text-lg">More insights are being prepared by our Clinical Team — check back soon.</p>
         </div>
       </section>
     </div>
