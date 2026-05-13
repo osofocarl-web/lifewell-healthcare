@@ -112,7 +112,7 @@ export default function ServicesPage() {
             <div className="relative z-10">
               <h2 className="text-5xl md:text-7xl font-outfit mb-8 leading-tight">Need a Bespoke Care Plan?</h2>
               <p className="text-blue-100/70 text-2xl mb-14 max-w-3xl mx-auto font-medium leading-relaxed">
-                Every individual is unique. We provide comprehensive consultations to design a care package that perfectly aligns with your family's specific needs and clinical requirements.
+                Every individual is unique. We provide comprehensive consultations to design a care package that perfectly aligns with your family&apos;s specific needs and clinical requirements.
               </p>
               <div className="flex flex-wrap justify-center gap-6">
                 <Link href="/contact">
