@@ -116,11 +116,18 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
       <section className="container mx-auto px-6 mt-24">
-        <div className="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-gray-100 h-[400px] flex flex-col items-center justify-center text-brand-blue/20">
-           <MapPin size={60} strokeWidth={1} className="mb-4" />
-           <p className="font-bold uppercase tracking-[0.3em] text-sm">Interactive Map Integration</p>
+        <div className="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-gray-100 h-[450px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.606828555239!2d-0.8876406233496355!3d52.239328571991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48770ed4293f773f%3A0x6339f417e813f36a!2s37%20Billing%20Rd%2C%20Northampton%20NN1%205DQ%2C%20UK!5e0!3m2!1sen!2sus!4v1715760000000!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Lifewell Healthcare Northampton Office"
+          ></iframe>
         </div>
       </section>
     </div>
