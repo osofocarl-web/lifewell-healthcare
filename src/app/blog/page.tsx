@@ -66,8 +66,9 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="flex items-center gap-3 flex-wrap">
-              <span className="inline-flex items-center gap-2 bg-brand-blue/10 text-brand-blue px-5 py-2 rounded-full text-sm font-bold">
-                Coming Soon — Full article launching shortly
+              <span className="inline-flex items-center gap-2 bg-brand-gold/10 text-brand-gold px-5 py-2 rounded-full text-sm font-black uppercase tracking-widest">
+                <span className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></span>
+                In Final Clinical Review
               </span>
             </div>
           </div>
@@ -92,8 +93,8 @@ export default function BlogPage() {
                 <p className="text-sm text-text-muted mb-8 leading-relaxed flex-grow">
                    {post.excerpt}
                 </p>
-                <span className="flex items-center gap-2 text-brand-blue/50 font-bold text-sm cursor-default">
-                  Coming Soon <ArrowRight size={16} />
+                <span className="flex items-center gap-2 text-brand-gold font-black text-[10px] uppercase tracking-widest cursor-default">
+                  In Clinical Review <ArrowRight size={14} />
                 </span>
               </div>
             </motion.div>
