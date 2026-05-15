@@ -120,7 +120,7 @@ export const Footer = () => {
           <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 text-xs text-blue-100/40 font-medium">
             <p>&copy; {new Date().getFullYear()} Lifewell Healthcare Ltd.</p>
             <p>Company No: 14638409</p>
-            <p>ICO Registered</p>
+            <p>ICO Registered: ZC026072</p>
             <div className="flex gap-6">
               <Link href="/privacy" className="hover:text-white transition-premium">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-premium">Terms of Service</Link>
