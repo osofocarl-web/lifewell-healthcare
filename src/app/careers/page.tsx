@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -40,6 +40,21 @@ const processSteps = [
 ];
 
 export default function CareersPage() {
+  const [file, setFile] = useState<File | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFile(e.target.files[0]);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
   return (
     <div className="bg-brand-bg min-h-screen pt-4 pb-24">
       {/* Header */}
@@ -174,15 +189,15 @@ export default function CareersPage() {
             </div>
           </div>
           <div className="p-16 md:w-3/5">
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-3">
                   <label className="text-sm font-black text-brand-blue uppercase tracking-widest">Full Name</label>
-                  <input type="text" className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none" placeholder="John Doe" />
+                  <input type="text" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none" placeholder="John Doe" />
                 </div>
                 <div className="flex flex-col gap-3">
                   <label className="text-sm font-black text-brand-blue uppercase tracking-widest">Email</label>
-                  <input type="email" className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none" placeholder="john@example.com" />
+                  <input type="email" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none" placeholder="john@example.com" />
                 </div>
               </div>
               <div className="flex flex-col gap-3">
@@ -196,15 +211,39 @@ export default function CareersPage() {
               </div>
               <div className="flex flex-col gap-3">
                 <label className="text-sm font-black text-brand-blue uppercase tracking-widest">Upload CV</label>
-                <div className="border-4 border-dashed border-brand-bg rounded-[2rem] p-12 text-center bg-brand-bg hover:border-brand-gold transition-premium cursor-pointer group">
-                  <Upload className="mx-auto text-brand-blue/30 group-hover:text-brand-gold mb-6" size={48} />
-                  <p className="text-lg font-bold text-brand-blue-dark">Click to upload CV</p>
-                  <p className="text-sm text-text-muted mt-2">PDF, DOCX (Max 5MB)</p>
+                <input 
+                  type="file" 
+                  ref={fileInputRef}
+                  onChange={handleFileChange}
+                  className="hidden" 
+                  accept=".pdf,.docx"
+                />
+                <div 
+                  onClick={() => fileInputRef.current?.click()}
+                  className={`border-4 border-dashed rounded-[2rem] p-12 text-center transition-premium cursor-pointer group ${file ? 'border-brand-gold bg-brand-gold/5' : 'border-brand-bg bg-brand-bg hover:border-brand-gold'}`}
+                >
+                  <Upload className={`mx-auto mb-6 ${file ? 'text-brand-gold' : 'text-brand-blue/30 group-hover:text-brand-gold'}`} size={48} />
+                  <p className="text-lg font-bold text-brand-blue-dark">
+                    {file ? file.name : "Click to upload CV"}
+                  </p>
+                  <p className="text-sm text-text-muted mt-2">
+                    {file ? `${(file.size / (1024 * 1024)).toFixed(2)} MB` : "PDF, DOCX (Max 5MB)"}
+                  </p>
                 </div>
               </div>
-              <Button variant="primary" className="w-full py-6 text-xl flex items-center justify-center gap-3">
-                Submit Application <Send size={24} />
-              </Button>
+              
+              {isSubmitted ? (
+                <div className="bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+                  <h4 className="text-green-800 font-bold mb-2">Ready to Submit!</h4>
+                  <p className="text-green-700 text-sm leading-relaxed">
+                    Your details are ready. To finalize your application, please email your CV directly to <a href="mailto:careers@lifewellhealthcare.org" className="font-bold underline">careers@lifewellhealthcare.org</a> or contact our clinical lead.
+                  </p>
+                </div>
+              ) : (
+                <Button type="submit" variant="primary" className="w-full py-6 text-xl flex items-center justify-center gap-3">
+                  Prepare Application <Send size={24} />
+                </Button>
+              )}
             </form>
           </div>
         </div>
