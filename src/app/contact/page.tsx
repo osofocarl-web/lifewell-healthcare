@@ -8,13 +8,34 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "e552de22-2e44-44b4-a40b-e23973d5ebea");
+    formData.append("subject", `New Lifewell Enquiry from ${formData.get("name")}`);
+    formData.append("from_name", "Lifewell Contact Form");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+      } else {
+        alert("Enquiry submission failed: " + data.message);
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Something went wrong. Please check your network and try again, or call us directly at 07836 681415.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1200);
+    }
   };
 
   return (
@@ -111,21 +132,21 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="flex flex-col gap-3">
                         <label className="text-sm font-bold text-brand-blue ml-2">Full Name</label>
-                        <input type="text" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="How should we address you?" />
+                        <input type="text" name="name" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="How should we address you?" />
                       </div>
                       <div className="flex flex-col gap-3">
                         <label className="text-sm font-bold text-brand-blue ml-2">Email Address</label>
-                        <input type="email" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="Where can we reach you?" />
+                        <input type="email" name="email" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="Where can we reach you?" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="flex flex-col gap-3">
                         <label className="text-sm font-bold text-brand-blue ml-2">Phone Number</label>
-                        <input type="tel" className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="Optional" />
+                        <input type="tel" name="phone" className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="Optional" />
                       </div>
                       <div className="flex flex-col gap-3">
                         <label className="text-sm font-bold text-brand-blue ml-2">Interested Service</label>
-                        <select className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main appearance-none">
+                        <select name="service" className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main appearance-none">
                           <option>General Enquiry</option>
                           <option>Domiciliary Care</option>
                           <option>Mental Health Support</option>
@@ -136,7 +157,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex flex-col gap-3">
                       <label className="text-sm font-bold text-brand-blue ml-2">Your Message</label>
-                      <textarea rows={6} required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main resize-none" placeholder="Tell us how we can help..."></textarea>
+                      <textarea rows={6} name="message" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main resize-none" placeholder="Tell us how we can help..."></textarea>
                     </div>
                     <Button type="submit" variant="primary" className="w-full py-5 text-lg flex items-center justify-center gap-3" disabled={isSubmitting}>
                       {isSubmitting ? "Sending..." : "Send Message"} <Send size={20} />
