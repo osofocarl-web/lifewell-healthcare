@@ -36,7 +36,7 @@ export const Footer = () => {
                 <Heart size={18} />
               </a>
               <a
-                href="mailto:info@lifewellhealthcare.org"
+                href="mailto:contact@lifewellhealthcare.org"
                 aria-label="Email us"
                 className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
               >
@@ -114,6 +114,12 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Emergency Disclaimer */}
+        <div className="mb-8 p-6 bg-white/5 rounded-2xl border border-white/10 text-xs text-blue-100/60 leading-relaxed max-w-4xl">
+          <span className="font-extrabold text-brand-gold-soft uppercase tracking-wider block mb-1">Safety & Emergency Notice</span>
+          Lifewell Healthcare Ltd is not an emergency medical service. If someone is in immediate danger, requires urgent medical help, or is experiencing a psychiatric crisis, please dial <strong className="text-white">999</strong> immediately or contact NHS <strong className="text-white">111</strong>. Our support lines and home care services are designed for planned, non-emergency personal support, domiciliary care, and therapeutic wellbeing facilitation.
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-8">
