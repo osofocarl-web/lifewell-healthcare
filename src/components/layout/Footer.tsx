@@ -108,9 +108,9 @@ export const Footer = () => {
                 <Phone className="text-brand-gold-soft shrink-0" size={20} />
                 <a href="tel:07836681415" className="hover:text-brand-gold transition-premium">07836 681415</a>
               </li>
-              <li className="flex items-center gap-3">
+              <li className="flex items-center gap-3 min-w-0">
                 <Mail className="text-brand-gold-soft shrink-0" size={20} />
-                <a href="mailto:contact@lifewellhealthcare.org" className="hover:text-brand-gold transition-premium">contact@lifewellhealthcare.org</a>
+                <a href="mailto:contact@lifewellhealthcare.org" className="hover:text-brand-gold transition-premium break-all">contact@lifewellhealthcare.org</a>
               </li>
             </ul>
           </div>
