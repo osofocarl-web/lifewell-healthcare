@@ -1,10 +1,22 @@
 "use client";
 
-import React from "react";
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
+import React, { useState } from "react";
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export default function ContactPage() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }, 1200);
+  };
+
   return (
     <div className="bg-brand-bg min-h-screen pt-4 pb-24">
       {/* Header */}
@@ -76,43 +88,62 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-10 lg:p-16 rounded-[2.5rem] shadow-xl border border-gray-100">
-              <h3 className="text-3xl font-bold mb-10 text-brand-blue-dark">Send a Message</h3>
-              <form className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-brand-blue ml-2">Full Name</label>
-                    <input type="text" className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="How should we address you?" />
+            <div className="bg-white p-10 lg:p-16 rounded-[2.5rem] shadow-xl border border-gray-100 min-h-[550px] flex flex-col justify-center">
+              {isSubmitted ? (
+                <div className="text-center flex flex-col items-center justify-center py-8">
+                  <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-8 border border-green-100 shadow-sm">
+                    <CheckCircle2 size={40} />
                   </div>
-                  <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-brand-blue ml-2">Email Address</label>
-                    <input type="email" className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="Where can we reach you?" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-brand-blue ml-2">Phone Number</label>
-                    <input type="tel" className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="Optional" />
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-brand-blue ml-2">Interested Service</label>
-                    <select className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main appearance-none">
-                      <option>General Enquiry</option>
-                      <option>Domiciliary Care</option>
-                      <option>Mental Health Support</option>
-                      <option>Dementia Support</option>
-                      <option>Join the Team</option>
-                    </select>
+                  <h3 className="text-3xl md:text-4xl font-outfit text-brand-blue-dark font-bold mb-4">Message Sent Successfully</h3>
+                  <p className="text-lg text-text-muted leading-relaxed max-w-lg mb-8">
+                    Thank you for contacting Lifewell Healthcare. Our clinically led administrative team will review your message and reach out to you within 2 hours.
+                  </p>
+                  <div className="bg-brand-bg border border-gray-100 rounded-2xl p-6 max-w-md w-full">
+                    <span className="text-[10px] text-brand-gold uppercase font-black tracking-widest block mb-2">Emergency Help Support Line</span>
+                    <a href="tel:07836681415" className="text-brand-blue-dark font-black text-xl hover:text-brand-gold transition-premium block">07836 681415</a>
+                    <span className="text-[10px] text-text-muted block mt-1">Available 24/7 for urgent clinical care</span>
                   </div>
                 </div>
-                <div className="flex flex-col gap-3">
-                  <label className="text-sm font-bold text-brand-blue ml-2">Your Message</label>
-                  <textarea rows={6} className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main resize-none" placeholder="Tell us how we can help..."></textarea>
-                </div>
-                <Button variant="primary" className="w-full py-5 text-lg flex items-center justify-center gap-3">
-                  Send Message <Send size={20} />
-                </Button>
-              </form>
+              ) : (
+                <>
+                  <h3 className="text-3xl font-bold mb-10 text-brand-blue-dark">Send a Message</h3>
+                  <form className="space-y-8" onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="flex flex-col gap-3">
+                        <label className="text-sm font-bold text-brand-blue ml-2">Full Name</label>
+                        <input type="text" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="How should we address you?" />
+                      </div>
+                      <div className="flex flex-col gap-3">
+                        <label className="text-sm font-bold text-brand-blue ml-2">Email Address</label>
+                        <input type="email" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="Where can we reach you?" />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="flex flex-col gap-3">
+                        <label className="text-sm font-bold text-brand-blue ml-2">Phone Number</label>
+                        <input type="tel" className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main" placeholder="Optional" />
+                      </div>
+                      <div className="flex flex-col gap-3">
+                        <label className="text-sm font-bold text-brand-blue ml-2">Interested Service</label>
+                        <select className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main appearance-none">
+                          <option>General Enquiry</option>
+                          <option>Domiciliary Care</option>
+                          <option>Mental Health Support</option>
+                          <option>Dementia Support</option>
+                          <option>Join the Team</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      <label className="text-sm font-bold text-brand-blue ml-2">Your Message</label>
+                      <textarea rows={6} required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none text-text-main resize-none" placeholder="Tell us how we can help..."></textarea>
+                    </div>
+                    <Button type="submit" variant="primary" className="w-full py-5 text-lg flex items-center justify-center gap-3" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Send Message"} <Send size={20} />
+                    </Button>
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </div>
