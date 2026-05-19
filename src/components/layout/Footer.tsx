@@ -27,7 +27,7 @@ export const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://wa.me/447836681815"
+                href="https://wa.me/447836681415"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -43,7 +43,7 @@ export const Footer = () => {
                 <Mail size={18} />
               </a>
               <a
-                href="tel:07836681815"
+                href="tel:07836681415"
                 aria-label="Call us"
                 className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
               >
@@ -106,7 +106,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-brand-gold-soft shrink-0" size={20} />
-                <a href="tel:07836681815" className="hover:text-brand-gold transition-premium">07836 681815</a>
+                <a href="tel:07836681415" className="hover:text-brand-gold transition-premium">07836 681415</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-brand-gold-soft shrink-0" size={20} />
