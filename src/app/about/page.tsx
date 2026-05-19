@@ -124,8 +124,8 @@ export default function AboutPage() {
                       <a href="mailto:info@lifewellhealthcare.org" className="flex items-center gap-3 text-brand-blue hover:text-brand-gold transition-premium font-bold">
                         <Mail size={18} /> info@lifewellhealthcare.org
                       </a>
-                      <a href="tel:+447836681815" className="flex items-center gap-3 text-brand-blue hover:text-brand-gold transition-premium font-bold">
-                        <Phone size={18} /> 07836 681815
+                      <a href="tel:07836681415" className="flex items-center gap-3 text-brand-blue hover:text-brand-gold transition-premium font-bold">
+                        <Phone size={18} /> 07836 681415
                       </a>
                     </div>
                   </div>
