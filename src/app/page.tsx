@@ -73,15 +73,19 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-4 sm:gap-6 mt-8 md:mt-12">
               <Link href="/contact">
                 <Button className="px-8 py-5 text-base sm:text-lg flex items-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#E6CD7D] text-[#002D59] font-black hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border-0 rounded-full">
-                  Request Care <ArrowRight size={20} />
+                  Speak With Our Team <ArrowRight size={20} />
                 </Button>
               </Link>
               <Link href="/about#clinical-leadership">
                 <Button className="px-8 py-5 text-base sm:text-lg flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/30 text-white backdrop-blur-md rounded-full hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 font-bold">
-                  Our Clinical Lead
+                  Meet Our Clinical Lead
                 </Button>
               </Link>
             </div>
+
+            <p className="mt-4 text-xs text-[#F8FAFC]/75 font-bold tracking-wide">
+              * Speak with our team about the right support for you or your loved one.
+            </p>
           </motion.div>
         </div>
         
@@ -106,7 +110,7 @@ export default function HomePage() {
           <div className="h-10 w-[1px] bg-gray-200 hidden lg:block"></div>
           <div className="flex items-center gap-5">
             <div className="flex flex-col items-end">
-              <span className="text-[10px] text-brand-gold uppercase font-black tracking-tighter">Clinical Support Line</span>
+              <span className="text-[10px] text-brand-gold uppercase font-black tracking-tighter">Support & Enquiries Line</span>
               <span className="text-brand-blue-dark font-black text-xl">07836 681415</span>
             </div>
             <div className="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center text-white shadow-lg animate-pulse">
