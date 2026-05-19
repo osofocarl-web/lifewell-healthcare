@@ -193,21 +193,27 @@ export default function CareersPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-3">
                   <label className="text-sm font-black text-brand-blue uppercase tracking-widest">Full Name</label>
-                  <input type="text" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none" placeholder="John Doe" />
+                  <input type="text" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none" placeholder="Your full name" />
                 </div>
                 <div className="flex flex-col gap-3">
                   <label className="text-sm font-black text-brand-blue uppercase tracking-widest">Email</label>
-                  <input type="email" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none" placeholder="john@example.com" />
+                  <input type="email" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none" placeholder="Your email address" />
                 </div>
               </div>
-              <div className="flex flex-col gap-3">
-                <label className="text-sm font-black text-brand-blue uppercase tracking-widest">Interested Position</label>
-                <select className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none appearance-none">
-                  <option>Care Professional</option>
-                  <option>Support Worker</option>
-                  <option>Mental Health Specialist</option>
-                  <option>Wellbeing Assistant</option>
-                </select>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-3">
+                  <label className="text-sm font-black text-brand-blue uppercase tracking-widest">Phone Number</label>
+                  <input type="tel" required className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none" placeholder="Best number for our team to contact you" />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <label className="text-sm font-black text-brand-blue uppercase tracking-widest">Interested Position</label>
+                  <select className="bg-brand-bg border-0 rounded-2xl p-5 focus:ring-2 focus:ring-brand-gold outline-none appearance-none">
+                    <option>Care Professional</option>
+                    <option>Support Worker</option>
+                    <option>Mental Health Specialist</option>
+                    <option>Wellbeing Assistant</option>
+                  </select>
+                </div>
               </div>
               <div className="flex flex-col gap-3">
                 <label className="text-sm font-black text-brand-blue uppercase tracking-widest">Upload CV</label>
@@ -227,7 +233,7 @@ export default function CareersPage() {
                     {file ? file.name : "Click to upload CV"}
                   </p>
                   <p className="text-sm text-text-muted mt-2">
-                    {file ? `${(file.size / (1024 * 1024)).toFixed(2)} MB` : "PDF, DOCX (Max 5MB)"}
+                    Upload your CV or email it to careers@lifewellhealthcare.org (PDF, DOCX)
                   </p>
                 </div>
               </div>
@@ -236,7 +242,7 @@ export default function CareersPage() {
                 <div className="bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
                   <h4 className="text-green-800 font-bold mb-2">Ready to Submit!</h4>
                   <p className="text-green-700 text-sm leading-relaxed">
-                    Your details are ready. To finalize your application, please email your CV directly to <a href="mailto:careers@lifewellhealthcare.org" className="font-bold underline">careers@lifewellhealthcare.org</a> or contact our clinical lead.
+                    Your details are ready. To finalize your application, please email your CV directly to <a href="mailto:careers@lifewellhealthcare.org" className="font-bold underline">careers@lifewellhealthcare.org</a> or contact our team at 07836 681415.
                   </p>
                 </div>
               ) : (
