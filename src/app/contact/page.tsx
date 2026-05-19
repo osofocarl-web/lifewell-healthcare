@@ -38,7 +38,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h5 className="font-bold text-brand-blue-dark">Email Us</h5>
-                    <p className="text-text-muted text-sm">info@lifewellhealthcare.org</p>
+                    <p className="text-text-muted text-sm">
+                      <a href="mailto:contact@lifewellhealthcare.org" className="hover:text-brand-gold transition-premium font-medium">contact@lifewellhealthcare.org</a>
+                    </p>
                   </div>
                 </div>
                 <div className="flex gap-4">
