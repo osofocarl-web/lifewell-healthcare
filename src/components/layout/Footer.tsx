@@ -110,7 +110,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-brand-gold-soft shrink-0" size={20} />
-                <a href="mailto:info@lifewellhealthcare.org" className="hover:text-brand-gold transition-premium">info@lifewellhealthcare.org</a>
+                <a href="mailto:contact@lifewellhealthcare.org" className="hover:text-brand-gold transition-premium">contact@lifewellhealthcare.org</a>
               </li>
             </ul>
           </div>
