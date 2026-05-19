@@ -85,10 +85,13 @@ export default function AboutPage() {
                 
                 <div className="space-y-6 text-text-muted text-lg leading-relaxed mb-10">
                   <p>
-                    Ida Acquah is a HCPC-registered Occupational Therapist and member of the Royal College of Occupational Therapists (RCOT) since 2010, with over 10 years’ experience across NHS intermediate care and adult social services.
+                    Ida Acquah is a HCPC-registered Occupational Therapist and member of the Royal College of Occupational Therapists (RCOT) since 2010, with over 10 years’ experience across NHS intermediate care and adult social services. Her deep understanding of functional rehabilitation and therapeutic goal-setting forms the clinical backbone of Lifewell Healthcare Ltd.
                   </p>
                   <p>
-                    Known for her calm, compassionate, and practical approach, she specializes in person-centred care that empowers individuals to regain confidence and quality of life.
+                    Known for her calm, compassionate, and practical approach, she specializes in person-centred care that empowers individuals to regain confidence and quality of life. Under Ida's expert guidance, our care plans focus on functional independence—meaning we do not simply perform routine chores for individuals, but work side-by-side with them to restore daily living skills, evaluate home safety, and facilitate smooth transitions from acute settings back to the comfort of home.
+                  </p>
+                  <p>
+                    Our clinical philosophy is built around complete reassurance for families. We believe that family members deserve absolute peace of mind, which is why we provide structured updates, transparent communication, and OT-led assessments that place dignity and clinical safety at the forefront of every support program we deliver.
                   </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 pt-4">
