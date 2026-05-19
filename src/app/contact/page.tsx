@@ -44,14 +44,14 @@ export default function ContactPage() {
                     <p className="text-brand-gold text-xs font-bold mt-1">Available 24/7 for Emergencies</p>
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 min-w-0">
                   <div className="w-12 h-12 bg-brand-bg rounded-xl flex items-center justify-center text-brand-blue shrink-0">
                     <Mail size={24} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h5 className="font-bold text-brand-blue-dark">Email Us</h5>
-                    <p className="text-text-muted text-sm">
-                      <a href="mailto:contact@lifewellhealthcare.org" className="hover:text-brand-gold transition-premium font-medium">contact@lifewellhealthcare.org</a>
+                    <p className="text-text-muted text-sm break-all">
+                      <a href="mailto:contact@lifewellhealthcare.org" className="hover:text-brand-gold transition-premium font-medium break-all">contact@lifewellhealthcare.org</a>
                     </p>
                   </div>
                 </div>
