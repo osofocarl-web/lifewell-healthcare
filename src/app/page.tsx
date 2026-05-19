@@ -43,8 +43,9 @@ export default function HomePage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-dark/90 via-brand-blue-dark/60 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-dark/50 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-dark/95 via-brand-blue-dark/70 to-brand-blue-dark/10"></div>
+          <div className="absolute inset-0 w-3/4 bg-gradient-to-r from-brand-blue-dark/90 via-brand-blue-dark/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-dark/60 via-transparent to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -59,11 +60,11 @@ export default function HomePage() {
               <span className="tracking-wide">Building care systems around quality, safety, and dignity</span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-outfit text-white mb-8 leading-[1.05] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
+            <h1 className="text-6xl md:text-8xl font-outfit text-white mb-8 leading-[1.05] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
               Supporting Lives with <span className="text-brand-gold-soft drop-shadow-none font-bold italic">Compassion</span>, Dignity, and Wellbeing.
             </h1>
             
-            <p className="text-2xl text-white mb-12 max-w-2xl leading-relaxed font-medium drop-shadow-md">
+            <p className="text-2xl text-white/95 mb-12 max-w-2xl leading-relaxed font-medium drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
               Premium domiciliary care where clinical Occupational Therapy expertise meets the heart of family-centred support.
             </p>
             
@@ -104,7 +105,7 @@ export default function HomePage() {
           <div className="flex items-center gap-5">
             <div className="flex flex-col items-end">
               <span className="text-[10px] text-brand-gold uppercase font-black tracking-tighter">Clinical Support Line</span>
-              <span className="text-brand-blue-dark font-black text-xl">07836 681815</span>
+              <span className="text-brand-blue-dark font-black text-xl">07836 681415</span>
             </div>
             <div className="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center text-white shadow-lg animate-pulse">
               <PhoneCall size={24} />
