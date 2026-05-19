@@ -28,7 +28,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h5 className="font-bold text-brand-blue-dark">Call Us</h5>
-                    <p className="text-text-muted text-sm">07836 681815</p>
+                    <p className="text-text-muted text-sm">07836 681415</p>
                     <p className="text-brand-gold text-xs font-bold mt-1">Available 24/7 for Emergencies</p>
                   </div>
                 </div>
@@ -63,7 +63,7 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-12 pt-10 border-t border-gray-100">
-                <a href="https://wa.me/447836681815" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/447836681415" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="w-full flex items-center justify-center gap-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
                     <MessageCircle size={20} /> Chat on WhatsApp
                   </Button>
