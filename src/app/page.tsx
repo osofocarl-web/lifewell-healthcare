@@ -43,9 +43,9 @@ export default function HomePage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-dark/95 via-brand-blue-dark/70 to-brand-blue-dark/10"></div>
-          <div className="absolute inset-0 w-3/4 bg-gradient-to-r from-brand-blue-dark/90 via-brand-blue-dark/40 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-dark/60 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[#0A1118]/40 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1118]/95 via-[#0A1118]/60 to-transparent w-[85%]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1118]/50 via-transparent to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -60,22 +60,22 @@ export default function HomePage() {
               <span className="tracking-wide">Building care systems around quality, safety, and dignity</span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-outfit text-white mb-8 leading-[1.05] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
-              Supporting Lives with <span className="text-brand-gold-soft drop-shadow-none font-bold italic">Compassion</span>, Dignity, and Wellbeing.
+            <h1 className="text-5xl md:text-7xl lg:text-[4.5rem] font-outfit text-[#F8FAFC] mb-6 leading-[1.1] tracking-tight [text-shadow:_0_2px_15px_rgba(0,0,0,0.2)]">
+              Supporting Lives with <span className="text-brand-gold font-bold italic [text-shadow:none]">Compassion</span>, Dignity, and Wellbeing.
             </h1>
             
-            <p className="text-2xl text-white/95 mb-12 max-w-2xl leading-relaxed font-medium drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+            <p className="text-xl md:text-2xl text-[#F8FAFC]/90 mb-12 max-w-2xl leading-relaxed font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.2)]">
               Premium domiciliary care where clinical Occupational Therapy expertise meets the heart of family-centred support.
             </p>
             
-            <div className="flex flex-wrap gap-5">
+            <div className="flex flex-wrap gap-6 mt-12">
               <Link href="/contact">
-                <Button variant="secondary" className="px-10 py-5 text-lg flex items-center gap-3 shadow-2xl">
+                <Button className="px-8 py-6 text-lg flex items-center gap-3 bg-gradient-to-r from-brand-gold to-brand-gold-soft text-brand-blue-dark font-black hover:shadow-[0_0_25px_rgba(197,160,40,0.4)] hover:-translate-y-1 transition-all duration-300 border-0 rounded-full">
                   Request Care <ArrowRight size={22} />
                 </Button>
               </Link>
               <Link href="/about#clinical-leadership">
-                <Button variant="outline" className="px-10 py-5 text-lg border-white/40 text-white hover:bg-white hover:text-brand-blue backdrop-blur-sm">
+                <Button className="px-8 py-6 text-lg flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-md rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-bold">
                   Our Clinical Lead
                 </Button>
               </Link>
