@@ -9,23 +9,23 @@ import { Button } from "@/components/ui/Button";
 
 const initiatives = [
   { 
-    title: "Men's Wellbeing Network", 
-    desc: "A dedicated space for men to discuss mental health, share experiences, and find support.", 
+    title: "Gentlemen's Wellbeing Network", 
+    desc: "A peer-led, supportive environment designed to encourage open discussions around mental health, physical safety, and loneliness among older gentlemen in our community. We break down the barriers of silent isolation through regular social contact, shared spaces, and active listening.", 
     icon: UserCheck 
   },
   { 
-    title: "Cultural Inclusion", 
-    desc: "Faith-sensitive care and support tailored to the diverse cultural landscape of the UK.", 
+    title: "Cultural & Faith Integration", 
+    desc: "We provide deeply respectful, faith-sensitive care plans tailored to the diverse communities of the UK. From understanding specific dietary requirements (such as Halal, Kosher, or vegetarian preferences) and respecting daily prayer routines, to accommodating spiritual values and language needs, we ensure you feel safe and respected.", 
     icon: Globe 
   },
   { 
-    title: "Wellbeing Workshops", 
-    desc: "Educational sessions on stress management, emotional resilience, and holistic health.", 
+    title: "Holistic Wellbeing Workshops", 
+    desc: "Empowering educational sessions focusing on stress management, healthy aging, functional mobility safety in the home, and general wellness. These workshops are guided by our Occupational Therapy framework to help individuals build physical confidence and cognitive resilience.", 
     icon: BookOpen 
   },
   { 
-    title: "Social Inclusion", 
-    desc: "Combatting loneliness through community events, coffee mornings, and group outings.", 
+    title: "Social Connection & Inclusion", 
+    desc: "An active, structured counter-measure against situational isolation and loneliness. We facilitate local social integration through accompanied community visits, memory-sharing circles, local coffee meetups, and group outings, re-building essential community bonds.", 
     icon: Coffee 
   },
 ];
