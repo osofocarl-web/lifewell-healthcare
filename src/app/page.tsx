@@ -60,11 +60,13 @@ export default function HomePage() {
               <span className="tracking-wide">Building care systems around quality, safety, and dignity</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-[4.5rem] font-outfit text-[#F8FAFC] mb-6 leading-[1.1] tracking-tight [text-shadow:_0_2px_15px_rgba(0,0,0,0.2)]">
-              Supporting Lives with <span className="text-brand-gold font-bold italic [text-shadow:none]">Compassion</span>, Dignity, and Wellbeing.
+            <h1 className="text-5xl md:text-7xl lg:text-[4.5rem] font-outfit mb-6 leading-[1.15] tracking-tight [text-shadow:_0_2px_15px_rgba(0,0,0,0.2)]" style={{ color: '#F8FAFC' }}>
+              Supporting Lives with <br className="hidden md:inline" />
+              <span className="font-black italic" style={{ color: '#D4AF37' }}>Compassion</span>, Dignity, <br className="hidden md:inline" />
+              and <span className="font-black italic" style={{ color: '#D4AF37' }}>Wellbeing</span>.
             </h1>
             
-            <p className="text-xl md:text-2xl text-[#F8FAFC]/90 mb-12 max-w-2xl leading-relaxed font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.2)]">
+            <p className="text-xl md:text-2xl mb-12 max-w-2xl leading-relaxed font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.2)]" style={{ color: '#F8FAFC' }}>
               Premium domiciliary care where clinical Occupational Therapy expertise meets the heart of family-centred support.
             </p>
             
