@@ -2,31 +2,53 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { Calendar, User, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Calendar, User, ArrowRight, BookOpen, Clock, Heart } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
-const posts = [
+const previewTopics = [
   {
-    title: "Understanding Dementia: A Guide for Families",
-    excerpt: "Practical tips and emotional support strategies for families navigating a dementia diagnosis.",
+    title: "Understanding Domiciliary Care: A Complete Guide",
+    category: "Care Guidance",
+    description: "An in-depth look at how home support works, how to evaluate care needs, and how to maintain personal independence safely.",
+    readTime: "8 min read",
+    id: "domiciliary-guide"
+  },
+  {
+    title: "Supporting a Loved One After Hospital Discharge",
+    category: "Transitions",
+    description: "Crucial home-safety checklists, environmental modifications, and immediate routines to ensure safe recovery and prevent re-admission.",
+    readTime: "6 min read",
+    id: "hospital-discharge"
+  },
+  {
+    title: "Dementia Support at Home: Creating Safe Routines",
     category: "Dementia Support",
-    date: "May 10, 2026",
-    author: "Clinical Team",
+    description: "Practical behavioral strategies and structured cognitive exercises designed to reduce anxiety and sustain memory engagement.",
+    readTime: "10 min read",
+    id: "dementia-support"
   },
   {
-    title: "The Importance of Emotional Wellbeing in Care",
-    excerpt: "Why holistic care must include mental health and emotional support for both clients and carers.",
-    category: "Wellbeing",
-    date: "May 05, 2026",
-    author: "Clinical Lead",
+    title: "How Companionship & Connection Elevates Longevity",
+    category: "Wellbeing & Inclusion",
+    description: "Exploring the clinical links between social connection, loneliness reduction, and physical health in older adults.",
+    readTime: "5 min read",
+    id: "companionship-longevity"
   },
   {
-    title: "Navigating Hospital Discharge Safely",
-    excerpt: "A checklist for a smooth transition from hospital to home healthcare support.",
-    category: "Health Tips",
-    date: "April 28, 2026",
-    author: "Care Manager",
+    title: "The Critical Role of Occupational Therapy in Care",
+    category: "Clinical Leadership",
+    description: "How OT functional assessments, equipment provision, and rehabilitation help individuals live on their own terms.",
+    readTime: "7 min read",
+    id: "ot-in-care"
   },
+  {
+    title: "Choosing a Domiciliary Care Provider Safely in the UK",
+    category: "Standards & Safety",
+    description: "A framework covering values-based recruitment, CQC-preparedness indicators, safeguarding checks, and service contracts.",
+    readTime: "9 min read",
+    id: "choosing-provider"
+  }
 ];
 
 export default function BlogPage() {
@@ -34,43 +56,30 @@ export default function BlogPage() {
     <div className="bg-brand-bg min-h-screen pt-4 pb-24">
       {/* Header */}
       <section className="container mx-auto px-6 mb-16 text-center">
-        <h1 className="text-5xl md:text-6xl font-outfit mb-6 text-brand-blue-dark tracking-tight">Healthcare <span className="text-brand-blue">Insights</span></h1>
+        <span className="text-brand-gold font-black uppercase tracking-[0.4em] text-xs mb-6 block">Clinical & Family Knowledge</span>
+        <h1 className="text-5xl md:text-6xl font-outfit mb-6 text-brand-blue-dark tracking-tight">Healthcare <span className="text-brand-blue">Insights & Guidance</span></h1>
         <p className="text-xl text-text-muted max-w-3xl mx-auto leading-relaxed font-medium">
-          Expert advice, community stories, and the latest updates from our Clinical Leadership team.
+          Professional advice, transition support guides, and care checklists curated by our Clinical Leadership team.
         </p>
       </section>
 
-      {/* Featured Post Placeholder */}
-      <section className="container mx-auto px-6 mb-24">
-        <div className="bg-white rounded-[3rem] overflow-hidden shadow-xl flex flex-col lg:flex-row border border-gray-100">
-          <div className="lg:w-1/2 relative aspect-video lg:aspect-auto">
-            <Image
-              src="/images/blog_featured.png"
-              alt="Social Inclusion for the Elderly"
-              fill
-              className="object-cover"
-            />
+      {/* Editorial Announcement Box */}
+      <section className="container mx-auto px-6 mb-20">
+        <div className="bg-white rounded-[3rem] p-10 lg:p-16 border border-gray-100 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center gap-10">
+          <div className="w-20 h-20 bg-brand-bg rounded-[2rem] flex items-center justify-center text-brand-blue shrink-0">
+            <BookOpen size={40} />
           </div>
-          <div className="lg:w-1/2 p-12 lg:p-16 flex flex-col justify-center">
-            <span className="text-brand-gold font-bold text-sm uppercase tracking-widest mb-4">Latest Insight</span>
-            <h2 className="text-4xl font-outfit mb-6 text-brand-blue-dark">Promoting Social Inclusion for the Elderly</h2>
-            <p className="text-lg text-text-main mb-10 leading-relaxed font-medium">
-              Loneliness can be a significant health risk. Learn how Lifewell&apos;s companionship services are rebuilding social bridges in our communities.
+          <div>
+            <span className="text-brand-gold font-black uppercase tracking-widest text-xs block mb-2">Editorial Hub Coming Soon</span>
+            <h2 className="text-2xl lg:text-3xl font-bold text-brand-blue-dark mb-4">Supporting Families, Carers & Professionals</h2>
+            <p className="text-base text-text-muted leading-relaxed font-medium max-w-4xl mb-6">
+              Our insights hub is currently being developed to support families, carers, and health professionals with practical healthcare guidance, dementia resources, hospital transition protocols, and home safety strategies. Explore our planned topics below and register your interest to receive them first.
             </p>
-            <div className="flex items-center gap-6 text-sm text-text-muted mb-10">
-              <div className="flex items-center gap-2 font-bold">
-                <Calendar size={16} className="text-brand-gold" /> May 12, 2026
-              </div>
-              <div className="flex items-center gap-2 font-bold">
-                <User size={16} className="text-brand-gold" /> Clinical Team
-              </div>
-            </div>
-            <div className="flex items-center gap-3 flex-wrap">
-              <span className="inline-flex items-center gap-2 bg-brand-gold/10 text-brand-gold px-5 py-2 rounded-full text-sm font-black uppercase tracking-widest">
-                <span className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></span>
-                In Final Clinical Review
-              </span>
-            </div>
+            <Link href="/contact?subject=Register%20Interest%20for%20Insights%20Hub">
+              <Button variant="primary" className="px-6 py-3 text-sm">
+                Register for Article Previews
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -78,31 +87,51 @@ export default function BlogPage() {
       {/* Blog Grid */}
       <section className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, i) => (
+          {previewTopics.map((topic, i) => (
             <motion.div
               key={i}
               whileHover={{ y: -5 }}
-              className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm flex flex-col"
+              className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm flex flex-col p-8 group transition-premium"
             >
-              <div className="bg-brand-bg aspect-[4/3] flex items-center justify-center text-brand-blue/20 font-bold text-xs uppercase tracking-widest">
-                Article Image
-              </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <span className="text-brand-gold font-bold text-[10px] uppercase tracking-widest mb-3">{post.category}</span>
-                <h3 className="text-xl font-bold mb-4 text-brand-blue-dark leading-tight">{post.title}</h3>
-                <p className="text-sm text-text-muted mb-8 leading-relaxed flex-grow">
-                   {post.excerpt}
-                </p>
-                <span className="flex items-center gap-2 text-brand-gold font-black text-[10px] uppercase tracking-widest cursor-default">
-                  In Clinical Review <ArrowRight size={14} />
+              {/* Category and Read time row */}
+              <div className="flex justify-between items-center mb-6">
+                <span className="text-brand-gold font-black text-[10px] uppercase tracking-widest">{topic.category}</span>
+                <span className="flex items-center gap-1 text-[10px] text-text-muted font-bold uppercase tracking-wider">
+                  <Clock size={12} className="text-brand-gold" /> {topic.readTime}
                 </span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl font-bold mb-4 text-brand-blue-dark leading-tight group-hover:text-brand-blue transition-premium">
+                {topic.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-xs text-text-muted mb-8 leading-relaxed flex-grow font-medium">
+                {topic.description}
+              </p>
+
+              {/* Action row */}
+              <div className="flex justify-between items-center pt-6 border-t border-gray-50 mt-auto">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-gold/10 text-brand-gold text-[9px] uppercase font-black tracking-widest rounded-full">
+                  <span className="w-1.5 h-1.5 bg-brand-gold rounded-full animate-pulse"></span>
+                  In Clinical Review
+                </span>
+                <Link href={`/contact?subject=Interest%20in%20article:%20${encodeURIComponent(topic.title)}`}>
+                  <button className="text-[10px] uppercase tracking-widest font-black text-brand-blue hover:text-brand-gold transition-premium flex items-center gap-1">
+                    Preview Topic <ArrowRight size={12} />
+                  </button>
+                </Link>
               </div>
             </motion.div>
           ))}
         </div>
         
-        <div className="mt-20 text-center">
-          <p className="text-text-muted font-medium text-lg">More insights are being prepared by our Clinical Team — check back soon.</p>
+        <div className="mt-24 text-center max-w-xl mx-auto p-8 rounded-3xl bg-white border border-gray-100">
+          <Heart size={32} className="text-brand-gold mx-auto mb-4" />
+          <p className="text-xs text-text-muted font-bold leading-relaxed">
+            All Lifewell Healthcare publications undergo thorough review by Ida Acquah (Lead Occupational Therapist) and our compliance managers before public release to ensure accuracy, clinical reliability, and strict compliance with care guidelines.
+          </p>
         </div>
       </section>
     </div>
