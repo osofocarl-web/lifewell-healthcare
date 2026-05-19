@@ -34,7 +34,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-[95vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero.png"
@@ -53,31 +53,31 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl"
+            className="max-w-[720px]"
           >
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-gold/30 border border-brand-gold/50 text-white font-bold text-sm mb-8 backdrop-blur-xl shadow-2xl">
               <ShieldCheck size={18} className="text-brand-gold-soft" />
               <span className="tracking-wide">Building care systems around quality, safety, and dignity</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-[4.5rem] font-outfit mb-6 leading-[1.15] tracking-tight [text-shadow:_0_2px_15px_rgba(0,0,0,0.2)]" style={{ color: '#F8FAFC' }}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-outfit mb-6 leading-[1.2] md:leading-[1.15] tracking-tight [text-shadow:_0_2px_15px_rgba(0,0,0,0.2)]" style={{ color: '#F8FAFC' }}>
               Supporting Lives with <br className="hidden md:inline" />
               <span className="font-black italic" style={{ color: '#D4AF37' }}>Compassion</span>, Dignity, <br className="hidden md:inline" />
               and <span className="font-black italic" style={{ color: '#D4AF37' }}>Wellbeing</span>.
             </h1>
             
-            <p className="text-xl md:text-2xl mb-12 max-w-2xl leading-relaxed font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.2)]" style={{ color: '#F8FAFC' }}>
+            <p className="text-base sm:text-lg md:text-xl mb-8 md:mb-12 max-w-xl leading-relaxed font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.2)]" style={{ color: '#F8FAFC' }}>
               Premium domiciliary care where clinical Occupational Therapy expertise meets the heart of family-centred support.
             </p>
             
-            <div className="flex flex-wrap gap-6 mt-12">
+            <div className="flex flex-wrap gap-4 sm:gap-6 mt-8 md:mt-12">
               <Link href="/contact">
-                <Button className="px-8 py-6 text-lg flex items-center gap-3 bg-gradient-to-r from-brand-gold to-brand-gold-soft text-brand-blue-dark font-black hover:shadow-[0_0_25px_rgba(197,160,40,0.4)] hover:-translate-y-1 transition-all duration-300 border-0 rounded-full">
-                  Request Care <ArrowRight size={22} />
+                <Button className="px-8 py-5 text-base sm:text-lg flex items-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#E6CD7D] text-[#002D59] font-black hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border-0 rounded-full">
+                  Request Care <ArrowRight size={20} />
                 </Button>
               </Link>
               <Link href="/about#clinical-leadership">
-                <Button className="px-8 py-6 text-lg flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-md rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-bold">
+                <Button className="px-8 py-5 text-base sm:text-lg flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/30 text-white backdrop-blur-md rounded-full hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 font-bold">
                   Our Clinical Lead
                 </Button>
               </Link>
@@ -206,10 +206,10 @@ export default function HomePage() {
                    <h4 className="font-bold text-brand-blue-dark mb-2">Empowerment</h4>
                    <p className="text-xs text-text-muted font-bold">FOCUS ON ABILITY</p>
                  </div>
-                 <div className="bg-brand-blue p-8 rounded-[2rem] shadow-lg text-white flex flex-col items-center text-center mt-12">
+                 <div className="bg-brand-blue-dark p-8 rounded-[2rem] shadow-lg text-white flex flex-col items-center text-center mt-12">
                    <Award className="text-brand-gold-soft mb-4" size={40} />
                    <h4 className="font-bold mb-2">Rehabilitation</h4>
-                   <p className="text-xs text-blue-100 font-bold">REGAINING SKILLS</p>
+                   <p className="text-xs text-brand-gold-soft font-bold">REGAINING SKILLS</p>
                  </div>
                  <div className="bg-white p-8 rounded-[2rem] shadow-lg border border-gray-100 flex flex-col items-center text-center">
                    <Users className="text-brand-gold mb-4" size={40} />
@@ -303,7 +303,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* Join Our Team CTA */}
-      <section className="py-20 bg-brand-blue">
+      <section className="py-20 bg-brand-blue-dark">
         <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-10">
           <div className="max-w-2xl">
             <span className="text-brand-gold-soft font-black uppercase tracking-[0.3em] text-sm mb-4 block">Join the Lifewell Family</span>
