@@ -23,7 +23,7 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="text-blue-100/70 leading-relaxed">
-              Supporting lives with compassion, dignity, and wellbeing. Premium UK healthcare and holistic support for your loved ones.
+              Supporting families across Northamptonshire with compassionate, dignified home care, dementia support, and OT-led rehabilitation.
             </p>
             <div className="flex gap-4">
               <a
@@ -102,7 +102,7 @@ export const Footer = () => {
             <ul className="flex flex-col gap-6 text-blue-100/70">
               <li className="flex items-start gap-3">
                 <MapPin className="text-brand-gold-soft shrink-0" size={20} />
-                <span>37 Billing Road,<br />Northampton, NN1 5DQ</span>
+                <span>64 Broadway,<br />Northampton, NN1 4SQ</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-brand-gold-soft shrink-0" size={20} />

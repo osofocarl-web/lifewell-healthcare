@@ -57,17 +57,17 @@ export default function HomePage() {
           >
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-gold/30 border border-brand-gold/50 text-white font-bold text-sm mb-8 backdrop-blur-xl shadow-2xl">
               <ShieldCheck size={18} className="text-brand-gold-soft" />
-              <span className="tracking-wide">Building care systems around quality, safety, and dignity</span>
+              <span className="tracking-wide">Compassionate Home Care &amp; OT Guidance in Northamptonshire</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-outfit mb-6 leading-[1.2] md:leading-[1.15] tracking-tight [text-shadow:_0_2px_15px_rgba(0,0,0,0.2)]" style={{ color: '#F8FAFC' }}>
               Supporting Lives with <br className="hidden md:inline" />
               <span className="font-black italic" style={{ color: '#D4AF37' }}>Compassion</span>, Dignity, <br className="hidden md:inline" />
-              and <span className="font-black italic" style={{ color: '#D4AF37' }}>Wellbeing</span>.
+              and <span className="font-black italic" style={{ color: '#D4AF37' }}>Independence</span>.
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl mb-8 md:mb-12 max-w-xl leading-relaxed font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.2)]" style={{ color: '#F8FAFC' }}>
-              Premium domiciliary care where clinical Occupational Therapy expertise meets the heart of family-centred support.
+              Personalised home care where clinical Occupational Therapy expertise meets the warmth and dependability your family deserves.
             </p>
             
             <div className="flex flex-wrap gap-4 sm:gap-6 mt-8 md:mt-12">
@@ -97,11 +97,11 @@ export default function HomePage() {
         <div className="container mx-auto px-6 flex flex-wrap justify-center lg:justify-between items-center gap-8">
           <div className="flex items-center gap-3 text-brand-blue-dark/70 font-bold uppercase tracking-widest text-xs">
             <CheckCircle2 className="text-brand-gold" size={20} />
-            <span>Partnership Readiness</span>
+            <span>Northamptonshire Local Care</span>
           </div>
           <div className="flex items-center gap-3 text-brand-blue-dark/70 font-bold uppercase tracking-widest text-xs">
             <CheckCircle2 className="text-brand-gold" size={20} />
-            <span>Governance-Led Care</span>
+            <span>HCPC Registered OT Guidance</span>
           </div>
           <div className="flex items-center gap-3 text-brand-blue-dark/70 font-bold uppercase tracking-widest text-xs">
             <CheckCircle2 className="text-brand-gold" size={20} />
@@ -208,22 +208,22 @@ export default function HomePage() {
                  <div className="bg-white p-8 rounded-[2rem] shadow-lg border border-gray-100 flex flex-col items-center text-center">
                    <Target className="text-brand-gold mb-4" size={40} />
                    <h4 className="font-bold text-brand-blue-dark mb-2">Empowerment</h4>
-                   <p className="text-xs text-text-muted font-bold">FOCUS ON ABILITY</p>
+                   <p className="text-xs text-text-muted font-bold">SUPPORTING WHAT YOU CAN DO</p>
                  </div>
                  <div className="bg-brand-blue-dark p-8 rounded-[2rem] shadow-lg text-white flex flex-col items-center text-center mt-12">
                    <Award className="text-brand-gold-soft mb-4" size={40} />
                    <h4 className="font-bold mb-2">Rehabilitation</h4>
-                   <p className="text-xs text-brand-gold-soft font-bold">REGAINING SKILLS</p>
+                   <p className="text-xs text-brand-gold-soft font-bold">REBUILDING CONFIDENCE</p>
                  </div>
                  <div className="bg-white p-8 rounded-[2rem] shadow-lg border border-gray-100 flex flex-col items-center text-center">
                    <Users className="text-brand-gold mb-4" size={40} />
                    <h4 className="font-bold text-brand-blue-dark mb-2">Inclusion</h4>
-                   <p className="text-xs text-text-muted font-bold">COMMUNITY FOCUS</p>
+                   <p className="text-xs text-text-muted font-bold">STAYING CONNECTED</p>
                  </div>
                  <div className="bg-white p-8 rounded-[2rem] shadow-lg border border-gray-100 flex flex-col items-center text-center mt-12">
                    <Heart className="text-brand-gold mb-4" size={40} />
                    <h4 className="font-bold text-brand-blue-dark mb-2">Dignity</h4>
-                   <p className="text-xs text-text-muted font-bold">RESTORING SELF-WORTH</p>
+                   <p className="text-xs text-text-muted font-bold">RESPECT FOR YOUR CHOICES</p>
                  </div>
                </div>
             </div>
@@ -248,18 +248,18 @@ export default function HomePage() {
             <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern.svg')] opacity-5"></div>
             <div className="relative z-10">
               <div className="max-w-3xl mb-16">
-                <span className="text-brand-gold-soft font-black uppercase tracking-[0.3em] text-sm mb-6 block">Executive Governance</span>
+                <span className="text-brand-gold-soft font-black uppercase tracking-[0.3em] text-sm mb-6 block">Care Governance</span>
                 <h2 className="text-5xl md:text-6xl font-outfit mb-8 leading-tight">Our Commitment to Quality & Safety</h2>
                 <p className="text-xl text-blue-100/70 leading-relaxed font-medium">
-                  Lifewell Healthcare is built around a rigorous governance-led framework, ensuring that quality, safety, and accountability are at the heart of every domiciliary care decision.
+                  Lifewell Healthcare is built upon robust clinical standards, comprehensive safeguarding, and open family communication—ensuring you feel completely supported every day.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {[
-                  { title: "Professional Safeguarding", desc: "A robust culture of protection and safety for all individuals.", icon: Shield },
-                  { title: "Safer Recruitment", desc: "Stringent DBS and values-based vetting for all staff.", icon: UserPlus },
-                  { title: "Accountability", desc: "Transparent reporting and professional quality assurance systems.", icon: Clock },
+                  { title: "Professional Safeguarding", desc: "A proactive culture of protection, dignity, and immediate reporting.", icon: Shield },
+                  { title: "Safer Recruitment", desc: "Comprehensive Enhanced DBS checks, in-depth references, and values-based interviews.", icon: UserPlus },
+                  { title: "Accountability", desc: "Transparent notes, unhurried visits, and regular communication with loved ones.", icon: Clock },
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-premium">
                     <item.icon className="text-brand-gold-soft" size={40} />

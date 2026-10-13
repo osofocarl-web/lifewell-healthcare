@@ -22,7 +22,7 @@ const perks = [
   { title: "Staff Wellbeing", desc: "Access to professional counselling and mental health support for our team.", icon: Heart },
   { title: "Growth Pathways", desc: "Clearly defined career progression from care assistant to management.", icon: GraduationCap },
   { title: "Flexible Working", desc: "Bespoke shift patterns that respect your personal life and commitments.", icon: Clock },
-  { title: "Values-Based Pay", desc: "Premium remuneration packages that reflect your professional value.", icon: Briefcase },
+  { title: "Values-Based Pay", desc: "Competitive hourly rates and reliable hours that truly value the dedication of our care team.", icon: Briefcase },
 ];
 
 const roles = [

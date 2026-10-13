@@ -14,12 +14,12 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <span className="text-brand-gold font-black uppercase tracking-[0.4em] text-xs mb-6 block">Our Clinical Legacy</span>
+          <span className="text-brand-gold font-black uppercase tracking-[0.4em] text-xs mb-6 block">Our Approach to Care</span>
           <h1 className="text-6xl md:text-8xl font-outfit mb-8 text-brand-blue-dark leading-tight">
-            Restoring <span className="text-brand-blue">Wellbeing</span> with Dignity
+            Restoring <span className="text-brand-blue">Independence</span> &amp; Dignity at Home
           </h1>
           <p className="text-2xl text-text-muted max-w-4xl mx-auto leading-relaxed font-medium">
-            Lifewell Healthcare Ltd is an executive-grade domiciliary care provider dedicated to world-class support for families and communities. Built on a foundation of clinical excellence and radical compassion.
+            Lifewell Healthcare Ltd is an independent, family-focused home care and wellbeing support provider based in Northampton. We combine Occupational Therapy expertise with heartfelt personal care to help you and your loved ones live safely and happily at home.
           </p>
         </motion.div>
       </section>
@@ -35,7 +35,7 @@ export default function AboutPage() {
             </div>
             <h2 className="text-4xl font-bold mb-8 text-brand-blue-dark">Our Vision</h2>
             <p className="text-text-muted text-xl leading-relaxed font-medium">
-              To be the benchmark for holistic, governance-led community care in the UK, recognized for our uncompromising commitment to emotional wellbeing, social restoration, and professional accountability.
+              To be Northamptonshire’s most trusted home care partner, known for dependable, unrushed visits, proactive clinical insight, and the warmth of a true family relationship.
             </p>
           </motion.div>
 
@@ -47,7 +47,7 @@ export default function AboutPage() {
             </div>
             <h2 className="text-4xl font-bold mb-8 text-brand-blue-dark">Our Mission</h2>
             <p className="text-text-muted text-xl leading-relaxed font-medium">
-              To deliver compassionate, person-centred care that ensures every individual is treated with the executive-level respect, clinical safety, and human dignity they deserve.
+              To provide thoughtful, person-centred care that listens closely to each person’s story, supports their independence, and gives families absolute confidence in the safety of their loved ones.
             </p>
           </motion.div>
         </div>

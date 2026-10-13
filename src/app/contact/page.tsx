@@ -87,7 +87,7 @@ export default function ContactPage() {
                   <div>
                     <h5 className="font-bold text-brand-blue-dark">Visit Us</h5>
                     <p className="text-text-muted text-sm leading-relaxed">
-                      37 Billing Road,<br />Northampton, NN1 5DQ
+                      64 Broadway,<br />Northampton, NN1 4SQ
                     </p>
                   </div>
                 </div>
@@ -218,7 +218,7 @@ export default function ContactPage() {
       <section className="container mx-auto px-6 mt-24">
         <div className="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-gray-100 h-[450px]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.606828555239!2d-0.8876406233496355!3d52.239328571991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48770ed4293f773f%3A0x6339f417e813f36a!2s37%20Billing%20Rd%2C%20Northampton%20NN1%205DQ%2C%20UK!5e0!3m2!1sen!2sus!4v1715760000000!5m2!1sen!2sus"
+            src="https://maps.google.com/maps?q=64+Broadway,+Northampton+NN1+4SQ&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
