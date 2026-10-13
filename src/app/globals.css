@@ -1,14 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --brand-blue: #003B73;
-  --brand-blue-dark: #002D59;
-  --brand-gold: #C5A028;
-  --brand-gold-soft: #D4AF37;
-  --brand-white: #FFFFFF;
-  --brand-bg: #F9FBFF;
-  --text-main: #1E293B;
-  --text-muted: #475569;
+  --brand-blue: #0f2438;
+  --brand-blue-dark: #0a1b2c;
+  --brand-blue-light: #1b3a56;
+  
+  --brand-gold: #b48a3c;
+  --brand-gold-soft: #c89d4e;
+  --brand-gold-light: #fbf7ee;
+  
+  --brand-sage: #2a5e53;
+  --brand-sage-light: #eff6f4;
+  
+  --brand-white: #ffffff;
+  --brand-bg: #faf9f6;
+  --brand-bg-subtle: #f3f1eb;
+  
+  --text-main: #182430;
+  --text-muted: #4e6074;
+  --text-light: #7a8b9e;
+  
+  --border-subtle: #e6e5dd;
   
   --background: var(--brand-bg);
   --foreground: var(--text-main);
@@ -17,53 +29,55 @@
 @theme inline {
   --color-brand-blue: var(--brand-blue);
   --color-brand-blue-dark: var(--brand-blue-dark);
+  --color-brand-blue-light: var(--brand-blue-light);
   --color-brand-gold: var(--brand-gold);
   --color-brand-gold-soft: var(--brand-gold-soft);
+  --color-brand-gold-light: var(--brand-gold-light);
+  --color-brand-sage: var(--brand-sage);
+  --color-brand-sage-light: var(--brand-sage-light);
   --color-brand-bg: var(--brand-bg);
+  --color-brand-bg-subtle: var(--brand-bg-subtle);
   --color-text-main: var(--text-main);
   --color-text-muted: var(--text-muted);
+  --color-border-subtle: var(--border-subtle);
   
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-outfit);
 }
 
 body {
   background-color: var(--brand-bg);
   color: var(--text-main);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--brand-blue-dark);
+  color: var(--brand-blue);
+  font-family: var(--font-heading), var(--font-sans), sans-serif;
+  letter-spacing: -0.02em;
   font-weight: 700;
+  line-height: 1.25;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+/* Subtle, dignified card styling */
+.card-natural {
+  background-color: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(15, 36, 56, 0.04), 0 4px 12px rgba(15, 36, 56, 0.02);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.transition-premium {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.card-natural:hover {
+  border-color: #d1d0c5;
+  box-shadow: 0 4px 20px rgba(15, 36, 56, 0.06);
+  transform: translateY(-2px);
 }
 
-.text-shadow-premium {
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.bg-section-soft {
-  background: linear-gradient(180deg, rgba(249, 251, 255, 1) 0%, rgba(240, 244, 255, 1) 100%);
-}
-
-.card-hover-premium {
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.card-hover-premium:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 40px 80px -20px rgba(0, 59, 115, 0.15);
+/* Smooth, non-jarring transitions */
+.transition-smooth {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }

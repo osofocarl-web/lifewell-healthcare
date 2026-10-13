@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { 
   Heart, 
   ShieldCheck, 
@@ -13,316 +12,433 @@ import {
   PhoneCall,
   Activity,
   UserPlus,
-  Target,
-  Shield,
   Clock,
-  ThumbsUp,
-  Award
+  Sparkles,
+  Home,
+  Brain,
+  Stethoscope,
+  Smile,
+  MapPin,
+  CalendarCheck
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
+const coreServices = [
+  {
+    title: "Visiting Domiciliary Care",
+    desc: "Compassionate help with morning routines, personal care, medication prompts, and healthy meal preparation in the comfort of home.",
+    icon: Home,
+    href: "/services#domiciliary",
+    tag: "Everyday Support"
+  },
+  {
+    title: "Dementia & Memory Care",
+    desc: "Patient, consistent care that respects personal history, reduces disorientation, and supports independence in familiar surroundings.",
+    icon: Brain,
+    href: "/services#dementia",
+    tag: "Specialist Support"
+  },
+  {
+    title: "Hospital Discharge Recovery",
+    desc: "Occupational Therapy led rehabilitation to help individuals transition safely from hospital back to confident daily living.",
+    icon: Stethoscope,
+    href: "/services#discharge",
+    tag: "Rehabilitation"
+  },
+  {
+    title: "Companionship & Wellbeing",
+    desc: "Meaningful social interaction, accompanied walks, conversation, and emotional support to prevent isolation.",
+    icon: Smile,
+    href: "/services#companionship",
+    tag: "Social Connection"
+  }
+];
 
+const pillars = [
+  {
+    title: "Consistent, Familiar Carers",
+    desc: "We prioritize continuity of care, ensuring you see the same friendly, dependable faces rather than constantly changing staff.",
+    icon: Users
+  },
+  {
+    title: "Occupational Therapy Led",
+    desc: "Our clinical leadership provides professional insight into home safety, mobility adaptations, and practical independence.",
+    icon: Activity
+  },
+  {
+    title: "Family Peace of Mind",
+    desc: "Transparent notes and regular updates keep family members fully informed about their loved one's wellness and day-to-day comfort.",
+    icon: ShieldCheck
+  },
+  {
+    title: "Unhurried, Dignified Visits",
+    desc: "We never rush personal care. Every visit is tailored around the client's own pace, preferences, and personal dignity.",
+    icon: Clock
+  }
+];
 
-const trustReasons = [
-  { title: "Compassionate Support", desc: "Care that goes beyond tasks to focus on emotional connection.", icon: Heart },
-  { title: "Dignity-First Care", desc: "Every interaction is rooted in respect for the individual.", icon: ThumbsUp },
-  { title: "Emotionally Intelligent", desc: "Staff trained in empathy and person-centred support.", icon: Activity },
-  { title: "Culturally Sensitive", desc: "Respecting diverse faiths and cultural backgrounds.", icon: ShieldCheck },
+const steps = [
+  {
+    step: "01",
+    title: "Initial Friendly Chat",
+    desc: "Call us on 07836 681415 or send an online enquiry. We listen to what you need and discuss the best care options without pressure."
+  },
+  {
+    step: "02",
+    title: "Free In-Home Assessment",
+    desc: "Our clinical lead visits your home to meet you and your family, review daily routines, assess mobility safety, and co-design a care plan."
+  },
+  {
+    step: "03",
+    title: "Care Begins at Your Pace",
+    desc: "We introduce your matched care workers, ensuring you feel completely comfortable, respected, and supported from day one."
+  },
+  {
+    step: "04",
+    title: "Ongoing Reviews & Updates",
+    desc: "We maintain close contact with family, conducting regular check-ins and adjusting support as needs naturally evolve."
+  }
 ];
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
+    <div className="flex flex-col bg-[#faf9f6]">
+
+      {/* 1. HERO SECTION - WARM, REASSURING & GROUNDED */}
+      <section className="relative bg-[#0f2438] text-white overflow-hidden pt-12 pb-20 md:py-28">
+        <div className="absolute inset-0 z-0 opacity-25">
           <Image
             src="/images/hero.png"
-            alt="Compassionate Domiciliary Care"
+            alt="Compassionate home care support in Northamptonshire"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-[#0A1118]/40 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1118]/95 via-[#0A1118]/60 to-transparent w-[85%]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1118]/50 via-transparent to-transparent"></div>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f2438] via-[#0f2438]/90 to-[#0f2438]/60 z-0"></div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-[720px]"
-          >
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-gold/30 border border-brand-gold/50 text-white font-bold text-sm mb-8 backdrop-blur-xl shadow-2xl">
-              <ShieldCheck size={18} className="text-brand-gold-soft" />
-              <span className="tracking-wide">Compassionate Home Care &amp; OT Guidance in Northamptonshire</span>
+          <div className="max-w-3xl">
+            {/* Accreditation Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold mb-6 backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-[#b48a3c]"></span>
+              <span>Local Home Care &amp; Clinical Occupational Therapy • Northamptonshire</span>
             </div>
-            
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-outfit mb-6 leading-[1.2] md:leading-[1.15] tracking-tight [text-shadow:_0_2px_15px_rgba(0,0,0,0.2)]" style={{ color: '#F8FAFC' }}>
-              Supporting Lives with <br className="hidden md:inline" />
-              <span className="font-black italic" style={{ color: '#D4AF37' }}>Compassion</span>, Dignity, <br className="hidden md:inline" />
-              and <span className="font-black italic" style={{ color: '#D4AF37' }}>Independence</span>.
+
+            {/* Main Title */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight tracking-tight">
+              Personalised, compassionate care in the comfort of your own home.
             </h1>
-            
-            <p className="text-base sm:text-lg md:text-xl mb-8 md:mb-12 max-w-xl leading-relaxed font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.2)]" style={{ color: '#F8FAFC' }}>
-              Personalised home care where clinical Occupational Therapy expertise meets the warmth and dependability your family deserves.
+
+            {/* Subtitle */}
+            <p className="text-base sm:text-lg md:text-xl text-white/85 mb-8 md:mb-10 leading-relaxed font-normal max-w-2xl">
+              Led by an experienced NHS Occupational Therapist, Lifewell Healthcare provides dependable visiting home care, dementia support, and rehabilitation shaped around your family&apos;s unique routines.
             </p>
-            
-            <div className="flex flex-wrap gap-4 sm:gap-6 mt-8 md:mt-12">
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4 mb-10">
               <Link href="/contact">
-                <Button className="px-8 py-5 text-base sm:text-lg flex items-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#E6CD7D] text-[#002D59] font-black hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border-0 rounded-full">
-                  Speak With Our Team <ArrowRight size={20} />
+                <Button variant="secondary" className="px-7 py-3.5 text-base">
+                  Speak With Our Care Team <ArrowRight size={18} />
                 </Button>
               </Link>
               <Link href="/about#clinical-leadership">
-                <Button className="px-8 py-5 text-base sm:text-lg flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/30 text-white backdrop-blur-md rounded-full hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 font-bold">
+                <Button variant="outline" className="px-7 py-3.5 text-base bg-white/10 border-white/30 text-white hover:bg-white hover:text-[#0f2438]">
                   Meet Our Clinical Lead
                 </Button>
               </Link>
             </div>
 
-            <p className="mt-4 text-xs text-[#F8FAFC]/75 font-bold tracking-wide">
-              * Speak with our team about the right support for you or your loved one.
-            </p>
-          </motion.div>
+            {/* Trust Points */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 border-t border-white/15 text-xs text-white/80">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={15} className="text-[#b48a3c] shrink-0" />
+                <span>Visiting Care from 64 Broadway, NN1 4SQ</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={15} className="text-[#b48a3c] shrink-0" />
+                <span>HCPC Registered Occupational Therapist Lead</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={15} className="text-[#b48a3c] shrink-0" />
+                <span>Enhanced DBS Checked &amp; Values-Vetted Carers</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={15} className="text-[#b48a3c] shrink-0" />
+                <span>Free In-Home Initial Assessment &amp; Advice</span>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-brand-bg to-transparent z-10"></div>
       </section>
 
-      {/* Trust Badges Strip */}
-      <section className="bg-white py-8 border-y border-gray-100 shadow-sm relative z-20">
-        <div className="container mx-auto px-6 flex flex-wrap justify-center lg:justify-between items-center gap-8">
-          <div className="flex items-center gap-3 text-brand-blue-dark/70 font-bold uppercase tracking-widest text-xs">
-            <CheckCircle2 className="text-brand-gold" size={20} />
+      {/* 2. REASSURANCE STRIP */}
+      <section className="bg-white border-b border-[#e6e5dd] py-5">
+        <div className="container mx-auto px-6 flex flex-wrap justify-between items-center gap-6">
+          <div className="flex items-center gap-2.5 text-xs font-semibold text-[#0f2438]">
+            <CheckCircle2 size={18} className="text-[#b48a3c]" />
             <span>Northamptonshire Local Care</span>
           </div>
-          <div className="flex items-center gap-3 text-brand-blue-dark/70 font-bold uppercase tracking-widest text-xs">
-            <CheckCircle2 className="text-brand-gold" size={20} />
-            <span>HCPC Registered OT Guidance</span>
+          <div className="flex items-center gap-2.5 text-xs font-semibold text-[#0f2438]">
+            <CheckCircle2 size={18} className="text-[#b48a3c]" />
+            <span>HCPC Registered Clinical Leadership</span>
           </div>
-          <div className="flex items-center gap-3 text-brand-blue-dark/70 font-bold uppercase tracking-widest text-xs">
-            <CheckCircle2 className="text-brand-gold" size={20} />
+          <div className="flex items-center gap-2.5 text-xs font-semibold text-[#0f2438]">
+            <CheckCircle2 size={18} className="text-[#b48a3c]" />
             <span>Preparing for CQC Registration</span>
           </div>
-          <div className="h-10 w-[1px] bg-gray-200 hidden lg:block"></div>
-          <div className="flex items-center gap-5">
-            <div className="flex flex-col items-end">
-              <span className="text-[10px] text-brand-gold uppercase font-black tracking-tighter">Support & Enquiries Line</span>
-              <span className="text-brand-blue-dark font-black text-xl">07836 681415</span>
-            </div>
-            <div className="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center text-white shadow-lg animate-pulse">
-              <PhoneCall size={24} />
+          <div className="flex items-center gap-3 bg-[#faf9f6] px-4 py-2 rounded-xl border border-[#e6e5dd]">
+            <PhoneCall size={18} className="text-[#b48a3c]" />
+            <div>
+              <span className="text-[10px] text-[#536479] uppercase font-bold tracking-wider block">Care Enquiries</span>
+              <a href="tel:07836681415" className="text-sm font-bold text-[#0f2438] hover:text-[#b48a3c]">
+                07836 681415
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Phase 2: Why Families Trust Lifewell */}
-      <section className="py-24 bg-brand-bg">
+      {/* 3. CORE SERVICES SECTION */}
+      <section className="py-20 bg-[#faf9f6]">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-end justify-between mb-16 gap-8">
-            <div className="max-w-2xl">
-              <span className="text-brand-gold font-black uppercase tracking-[0.3em] text-sm mb-4 block">The Lifewell Difference</span>
-              <h2 className="text-5xl md:text-6xl font-outfit text-brand-blue-dark leading-tight">Why Families Trust Our Professional Care</h2>
-            </div>
-            <p className="text-text-muted text-xl max-w-md leading-relaxed pb-2 font-medium">
-              We provide domiciliary care that feels personal, professional, and deeply rooted in our community.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {trustReasons.map((item, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -10 }}
-                className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:shadow-2xl transition-premium group"
-              >
-                <div className="w-14 h-14 bg-brand-bg rounded-2xl flex items-center justify-center text-brand-blue mb-8 group-hover:bg-brand-blue group-hover:text-white transition-premium">
-                  <item.icon size={28} />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-brand-blue-dark">{item.title}</h3>
-                <p className="text-sm text-text-muted leading-relaxed font-medium">
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Phase 2: Care That Feels Personal */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-20">
-            <div className="flex-1 relative">
-              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-brand-bg bg-brand-bg">
-                <Image
-                  src="/images/wellbeing.png"
-                  alt="Personalised Community Care"
-                  width={600}
-                  height={700}
-                  className="object-cover"
-                />
-              </div>
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-gold/10 rounded-full blur-3xl"></div>
-            </div>
-            <div className="flex-1">
-              <span className="text-brand-gold font-black uppercase tracking-[0.3em] text-sm mb-6 block">Personalised Wellbeing</span>
-              <h2 className="text-5xl md:text-6xl font-outfit mb-8 leading-tight text-brand-blue-dark">Care That Feels Like <span className="text-brand-gold italic">Family</span></h2>
-              <p className="text-xl text-text-muted mb-10 leading-relaxed font-medium">
-                We believe community care should be as unique as the individual. Our approach focuses on emotional wellbeing, companionship, and maintaining independence.
-              </p>
-              <div className="space-y-6 mb-12">
-                {[
-                  "Family reassurance & regular updates",
-                  "Holistic emotional support systems",
-                  "Dedicated companionship matching",
-                  "Safe & empowering home environments"
-                ].map((text, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <div className="w-6 h-6 rounded-full bg-brand-blue/10 flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="text-brand-blue" size={16} />
-                    </div>
-                    <span className="font-bold text-brand-blue-dark/80 tracking-wide">{text}</span>
-                  </div>
-                ))}
-              </div>
-              <Link href="/services">
-                <Button variant="primary" className="px-10 py-4">Explore Our Approach</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Phase 2: Supporting Independent Living */}
-      <section className="py-24 bg-brand-bg relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-blue-dark/5 -skew-x-12 transform translate-x-1/4"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-20">
-            <div className="flex-1">
-               <div className="grid grid-cols-2 gap-6">
-                 <div className="bg-white p-8 rounded-[2rem] shadow-lg border border-gray-100 flex flex-col items-center text-center">
-                   <Target className="text-brand-gold mb-4" size={40} />
-                   <h4 className="font-bold text-brand-blue-dark mb-2">Empowerment</h4>
-                   <p className="text-xs text-text-muted font-bold">SUPPORTING WHAT YOU CAN DO</p>
-                 </div>
-                 <div className="bg-brand-blue-dark p-8 rounded-[2rem] shadow-lg text-white flex flex-col items-center text-center mt-12">
-                   <Award className="text-brand-gold-soft mb-4" size={40} />
-                   <h4 className="font-bold mb-2">Rehabilitation</h4>
-                   <p className="text-xs text-brand-gold-soft font-bold">REBUILDING CONFIDENCE</p>
-                 </div>
-                 <div className="bg-white p-8 rounded-[2rem] shadow-lg border border-gray-100 flex flex-col items-center text-center">
-                   <Users className="text-brand-gold mb-4" size={40} />
-                   <h4 className="font-bold text-brand-blue-dark mb-2">Inclusion</h4>
-                   <p className="text-xs text-text-muted font-bold">STAYING CONNECTED</p>
-                 </div>
-                 <div className="bg-white p-8 rounded-[2rem] shadow-lg border border-gray-100 flex flex-col items-center text-center mt-12">
-                   <Heart className="text-brand-gold mb-4" size={40} />
-                   <h4 className="font-bold text-brand-blue-dark mb-2">Dignity</h4>
-                   <p className="text-xs text-text-muted font-bold">RESPECT FOR YOUR CHOICES</p>
-                 </div>
-               </div>
-            </div>
-            <div className="flex-1">
-              <span className="text-brand-gold font-black uppercase tracking-[0.3em] text-sm mb-6 block">Rehabilitative Care</span>
-              <h2 className="text-5xl md:text-6xl font-outfit mb-8 leading-tight text-brand-blue-dark">Supporting Independent Living</h2>
-              <p className="text-xl text-text-muted mb-10 leading-relaxed font-medium">
-                Our rehabilitation assistance is led by Occupational Therapy expertise. We don&apos;t just provide care; we build confidence and help restore the skills needed for a dignified, independent life.
-              </p>
-              <Link href="/services">
-                <Button variant="outline" className="px-10 py-4 border-brand-blue text-brand-blue">View Our Services</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Phase 2: Our Commitment to Quality (Governance) */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="bg-brand-blue-dark rounded-[4rem] p-12 lg:p-24 text-white relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern.svg')] opacity-5"></div>
-            <div className="relative z-10">
-              <div className="max-w-3xl mb-16">
-                <span className="text-brand-gold-soft font-black uppercase tracking-[0.3em] text-sm mb-6 block">Care Governance</span>
-                <h2 className="text-5xl md:text-6xl font-outfit mb-8 leading-tight">Our Commitment to Quality & Safety</h2>
-                <p className="text-xl text-blue-100/70 leading-relaxed font-medium">
-                  Lifewell Healthcare is built upon robust clinical standards, comprehensive safeguarding, and open family communication—ensuring you feel completely supported every day.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                {[
-                  { title: "Professional Safeguarding", desc: "A proactive culture of protection, dignity, and immediate reporting.", icon: Shield },
-                  { title: "Safer Recruitment", desc: "Comprehensive Enhanced DBS checks, in-depth references, and values-based interviews.", icon: UserPlus },
-                  { title: "Accountability", desc: "Transparent notes, unhurried visits, and regular communication with loved ones.", icon: Clock },
-                ].map((item, i) => (
-                  <div key={i} className="flex flex-col gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-premium">
-                    <item.icon className="text-brand-gold-soft" size={40} />
-                    <div>
-                      <h4 className="text-xl font-bold mb-3">{item.title}</h4>
-                      <p className="text-sm text-blue-100/60 leading-relaxed font-medium">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Governance & Trust Section */}
-      <section className="py-24 bg-brand-bg border-t border-gray-100">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center text-center mb-16">
-            <span className="text-brand-gold font-black uppercase tracking-[0.3em] text-sm mb-4 block">Trust & Governance</span>
-            <h2 className="text-4xl md:text-5xl font-outfit text-brand-blue-dark leading-tight max-w-3xl">
-              Setting the Standard for Community Care
+          <div className="max-w-2xl mb-14">
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2.5">
+              What We Do
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0f2438] mb-4">
+              Care shaped around your family&apos;s routine
             </h2>
+            <p className="text-base text-[#4e6074] leading-relaxed">
+              Whether you need regular morning visits, support following a stay in hospital, or sensitive dementia guidance, we tailor our assistance to help you feel safe and in control.
+            </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: "Built Around Quality & Safety", icon: ShieldCheck },
-              { title: "Preparing for CQC Registration", icon: Target },
-              { title: "Clinical Occupational Therapy Leadership", icon: Activity },
-              { title: "Person-Centred Community Care", icon: Heart }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center group transition-premium"
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {coreServices.map((service, idx) => (
+              <div 
+                key={idx} 
+                className="bg-white p-7 rounded-2xl border border-[#e6e5dd] shadow-sm hover:shadow-md hover:border-[#cbd0d8] transition-all flex flex-col justify-between"
               >
-                <div className="w-16 h-16 rounded-full bg-brand-blue/5 text-brand-blue flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-premium">
-                  <item.icon size={32} />
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-[#faf9f6] border border-[#e6e5dd] flex items-center justify-center text-[#0f2438] mb-6">
+                    <service.icon size={22} className="text-[#b48a3c]" />
+                  </div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#b48a3c] block mb-1">
+                    {service.tag}
+                  </span>
+                  <h3 className="text-lg font-bold text-[#0f2438] mb-2.5">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-[#4e6074] leading-relaxed mb-6">
+                    {service.desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-brand-blue-dark">{item.title}</h3>
-              </motion.div>
+                <Link 
+                  href={service.href} 
+                  className="text-xs font-bold text-[#0f2438] hover:text-[#b48a3c] inline-flex items-center gap-1.5 transition-colors"
+                >
+                  Learn more &rarr;
+                </Link>
+              </div>
             ))}
           </div>
         </div>
       </section>
-      {/* Join Our Team CTA */}
-      <section className="py-20 bg-brand-blue-dark">
-        <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-10">
-          <div className="max-w-2xl">
-            <span className="text-brand-gold-soft font-black uppercase tracking-[0.3em] text-sm mb-4 block">Join the Lifewell Family</span>
-            <h2 className="text-4xl md:text-5xl font-outfit text-white leading-tight">We&apos;re Looking for Compassionate People</h2>
-            <p className="text-blue-100/80 mt-4 text-lg leading-relaxed font-medium">
-              If you have a passion for supporting others with dignity and care, we&apos;d love to hear from you.
+
+      {/* 4. WHY FAMILIES TRUST US (THE FOUR PILLARS) */}
+      <section className="py-20 bg-white border-y border-[#e6e5dd]">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mb-14">
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2.5">
+              The Lifewell Difference
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0f2438] mb-4">
+              Care built on dignity, trust, and unhurried kindness
+            </h2>
+            <p className="text-base text-[#4e6074] leading-relaxed">
+              We know that inviting a care worker into your home is a major decision. That is why our practice is founded on professional standards, empathy, and absolute respect for your choices.
             </p>
           </div>
-          <Link href="/careers">
-            <Button variant="secondary" className="px-10 py-5 text-lg flex items-center gap-3 whitespace-nowrap shadow-2xl">
-              <UserPlus size={22} /> Join Our Team
-            </Button>
-          </Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {pillars.map((pillar, idx) => (
+              <div 
+                key={idx} 
+                className="p-7 rounded-2xl bg-[#faf9f6] border border-[#e6e5dd]"
+              >
+                <div className="w-11 h-11 rounded-xl bg-white border border-[#e6e5dd] flex items-center justify-center text-[#0f2438] mb-5">
+                  <pillar.icon size={20} className="text-[#b48a3c]" />
+                </div>
+                <h3 className="text-base font-bold text-[#0f2438] mb-2">
+                  {pillar.title}
+                </h3>
+                <p className="text-xs text-[#4e6074] leading-relaxed">
+                  {pillar.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* 5. CLINICAL LEADERSHIP SPOTLIGHT (IDA ACQUAH) */}
+      <section className="py-20 bg-[#faf9f6]">
+        <div className="container mx-auto px-6">
+          <div className="bg-white rounded-3xl border border-[#e6e5dd] p-8 md:p-14 shadow-sm">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+              {/* Photo */}
+              <div className="w-full lg:w-5/12 max-w-[380px] shrink-0">
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#e6e5dd] shadow-sm">
+                  <Image
+                    src="/images/ida_acquah.jpg"
+                    alt="Ida Acquah - Clinical Lead and Lead Occupational Therapist"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              </div>
+
+              {/* Bio and Credentials */}
+              <div className="flex-1">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fbf7ee] border border-[#e6d8b5] text-[#b48a3c] text-xs font-bold mb-4">
+                  <span>Clinical Leadership</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0f2438] mb-1.5">
+                  Ida Acquah
+                </h2>
+                <p className="text-sm font-semibold text-[#b48a3c] mb-6">
+                  Clinical Lead • HCPC Registered Occupational Therapist (RCOT Member since 2010)
+                </p>
+
+                <p className="text-sm md:text-base text-[#4e6074] leading-relaxed mb-4">
+                  With over a decade of clinical experience across NHS intermediate care and adult social services, Ida brings a practical, rehabilitative focus to our home care provision. Her expertise ensures our care goes beyond routine tasks to actively support mobility, home safety, and functional recovery.
+                </p>
+
+                <p className="text-sm md:text-base text-[#4e6074] leading-relaxed mb-6">
+                  &ldquo;Our aim is to support individuals in maintaining their dignity and independence. We don&apos;t just do things for our clients—we work alongside them, listening to what matters most to their daily happiness.&rdquo;
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-4 border-t border-[#e6e5dd] text-xs text-[#0f2438] mb-8">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={15} className="text-[#b48a3c]" />
+                    <span>HCPC &amp; RCOT Registered</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={15} className="text-[#b48a3c]" />
+                    <span>Functional Independence Assessments</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={15} className="text-[#b48a3c]" />
+                    <span>Moving, Handling &amp; Home Safety</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={15} className="text-[#b48a3c]" />
+                    <span>Hospital Discharge Care Planning</span>
+                  </div>
+                </div>
+
+                <Link href="/about#clinical-leadership">
+                  <Button variant="outline">
+                    Read More About Our Clinical Governance &rarr;
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. HOW WE ARRANGE CARE (4-STEP PATHWAY) */}
+      <section className="py-20 bg-white border-t border-[#e6e5dd]">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2.5">
+              Getting Started
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0f2438] mb-4">
+              Arranging care without stress or confusion
+            </h2>
+            <p className="text-base text-[#4e6074] leading-relaxed">
+              We guide you through every step gently and clearly, ensuring you and your loved one feel informed and completely in control.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {steps.map((st, idx) => (
+              <div 
+                key={idx} 
+                className="bg-[#faf9f6] p-7 rounded-2xl border border-[#e6e5dd] relative flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-2xl font-black text-[#b48a3c]/60 block mb-3 font-mono">
+                    {st.step}
+                  </span>
+                  <h3 className="text-base font-bold text-[#0f2438] mb-2">
+                    {st.title}
+                  </h3>
+                  <p className="text-xs text-[#4e6074] leading-relaxed">
+                    {st.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/contact">
+              <Button variant="primary" className="px-8 py-3.5 text-base">
+                Book a Free In-Home Consultation &rarr;
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. PRACTICE HUB & CONTACT PROMPT */}
+      <section className="py-20 bg-[#faf9f6] border-t border-[#e6e5dd]">
+        <div className="container mx-auto px-6">
+          <div className="bg-[#0f2438] text-white rounded-3xl p-8 md:p-14">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              <div>
+                <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-3">
+                  Local Northampton Care Hub
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                  Based in Northampton, serving families across Northamptonshire
+                </h2>
+                <p className="text-white/80 text-sm md:text-base leading-relaxed mb-6">
+                  Our registered office and coordination team are located at <strong>64 Broadway, Northampton, NN1 4SQ</strong>. We provide domiciliary care and wellbeing visits across Northampton, Towcester, Wellingborough, Daventry, and surrounding villages.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 text-xs">
+                  <div className="flex items-center gap-2">
+                    <MapPin size={16} className="text-[#b48a3c]" />
+                    <span>64 Broadway, Northampton, NN1 4SQ</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <PhoneCall size={16} className="text-[#b48a3c]" />
+                    <span>07836 681415</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-lg-end items-center">
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button variant="secondary" className="w-full sm:w-auto px-7 py-3.5">
+                    Contact Our Office
+                  </Button>
+                </Link>
+                <Link href="/careers" className="w-full sm:w-auto">
+                  <Button variant="outline" className="w-full sm:w-auto px-7 py-3.5 bg-white/10 border-white/20 text-white hover:bg-white hover:text-[#0f2438]">
+                    Join Our Care Team
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

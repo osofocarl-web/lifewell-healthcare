@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -9,6 +8,7 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
 }
 
 export const Button = ({
@@ -17,29 +17,25 @@ export const Button = ({
   className = "",
   onClick,
   type = "button",
+  disabled = false,
 }: ButtonProps) => {
-  const baseStyles = "px-6 py-3 rounded-full font-semibold transition-premium focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseStyles = "inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer";
   
   const variants = {
-    primary: "bg-brand-blue text-white hover:bg-brand-blue-dark shadow-lg hover:shadow-brand-blue/30",
-    secondary: "bg-brand-gold text-white hover:bg-brand-gold-soft shadow-lg hover:shadow-brand-gold/30",
-    outline: "border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white shadow-sm hover:shadow-md",
-    ghost: "text-brand-blue hover:bg-brand-blue/5",
+    primary: "bg-[#0f2438] text-white hover:bg-[#1b3a56] shadow-sm hover:shadow hover:-translate-y-0.5 focus:ring-[#0f2438]",
+    secondary: "bg-[#b48a3c] text-white hover:bg-[#a0772e] shadow-sm hover:shadow hover:-translate-y-0.5 focus:ring-[#b48a3c]",
+    outline: "border border-[#d0d3d8] bg-white text-[#0f2438] hover:bg-[#f4f3ed] hover:border-[#0f2438] hover:-translate-y-0.5 focus:ring-[#0f2438]",
+    ghost: "text-[#0f2438] hover:bg-black/5 focus:ring-[#0f2438]",
   };
 
   return (
-    <motion.button
-      whileHover={{ 
-        scale: 1.05,
-        y: -2,
-        transition: { type: "spring", stiffness: 400, damping: 10 }
-      }}
-      whileTap={{ scale: 0.95 }}
+    <button
       type={type}
       onClick={onClick}
+      disabled={disabled}
       className={`${baseStyles} ${variants[variant]} ${className}`}
     >
       {children}
-    </motion.button>
+    </button>
   );
 };

@@ -3,8 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Heart, ChevronDown } from "lucide-react";
+import { Menu, X, Heart, ChevronDown, Phone, MapPin, ShieldCheck } from "lucide-react";
 import { Button } from "../ui/Button";
 
 interface DropdownItem {
@@ -48,162 +47,158 @@ const navLinks = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <nav
-      className={`fixed w-full z-50 transition-premium ${
-        scrolled 
-          ? "bg-white/90 backdrop-blur-xl border-b border-gray-100/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-3" 
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="bg-brand-blue p-2 rounded-lg group-hover:bg-brand-gold transition-premium">
-            <Heart className="text-white w-6 h-6" />
+    <header className="fixed top-0 left-0 w-full z-50">
+      {/* Top Clinical & Contact Bar */}
+      <div className="bg-[#0f2438] text-white text-xs py-2 px-6 border-b border-white/10 hidden md:block">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 text-white/90">
+              <MapPin size={13} className="text-[#b48a3c]" />
+              <span>64 Broadway, Northampton, NN1 4SQ</span>
+            </div>
+            <span className="text-white/30">|</span>
+            <div className="flex items-center gap-2 text-white/80">
+              <ShieldCheck size={13} className="text-[#b48a3c]" />
+              <span>HCPC Registered Occupational Therapy Leadership</span>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-tight text-brand-blue leading-none">
-              LIFEWELL
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-brand-gold font-bold">
-              Healthcare
-            </span>
+          <div className="flex items-center gap-4">
+            <span className="text-white/70">Family Enquiries &amp; Referrals:</span>
+            <a href="tel:07836681415" className="font-bold text-white hover:text-[#b48a3c] transition-colors flex items-center gap-1.5">
+              <Phone size={13} /> 07836 681415
+            </a>
           </div>
-        </Link>
-
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => {
-            if (link.dropdown) {
-              return (
-                <div key={link.name} className="relative group py-2">
-                  <button
-                    className={`flex items-center gap-1 text-sm font-medium transition-premium hover:text-brand-gold outline-none ${
-                      pathname.startsWith(link.href) ? "text-brand-gold" : "text-brand-blue"
-                    }`}
-                  >
-                    {link.name}
-                    <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
-                  </button>
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[340px] bg-white rounded-2xl shadow-xl border border-gray-100/50 p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-95 group-hover:scale-100 origin-top z-50">
-                    <div className="flex flex-col gap-1">
-                      {link.dropdown.map((item) => (
-                        <Link
-                          key={item.title}
-                          href={item.href}
-                          className="flex flex-col p-3 rounded-xl hover:bg-brand-bg transition-premium group/item"
-                        >
-                          <span className="text-sm font-bold text-brand-blue-dark group-hover/item:text-brand-blue">
-                            {item.title}
-                          </span>
-                          <span className="text-xs text-text-muted mt-0.5 leading-normal">
-                            {item.description}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`text-sm font-medium transition-premium hover:text-brand-gold ${
-                  pathname === link.href ? "text-brand-gold" : "text-brand-blue"
-                }`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
-          <Link href="/contact">
-            <Button variant="primary" className="text-sm px-5 py-2">
-              Request Care
-            </Button>
-          </Link>
         </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden text-brand-blue"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
 
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden shadow-lg max-h-[85vh] overflow-y-auto"
-          >
-            <div className="flex flex-col p-6 gap-5">
-              {navLinks.map((link) => (
-                <div key={link.name} className="flex flex-col gap-1">
-                  {link.dropdown ? (
-                    <>
-                      <span className="text-xs uppercase tracking-wider font-extrabold text-brand-gold mt-1 px-1">
-                        {link.name}
-                      </span>
-                      <div className="flex flex-col pl-4 border-l border-gray-100 gap-3 mt-2">
-                        {link.dropdown.map((item) => (
-                          <Link
-                            key={item.title}
-                            href={item.href}
-                            onClick={() => setIsOpen(false)}
-                            className="flex flex-col group py-1"
-                          >
-                            <span className="text-sm font-bold text-brand-blue-dark active:text-brand-blue">
-                              {item.title}
-                            </span>
-                            <span className="text-xs text-text-muted leading-normal">
-                              {item.description}
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`text-base font-bold py-1 ${
-                        pathname === link.href ? "text-brand-gold" : "text-brand-blue"
+      {/* Main Navbar */}
+      <nav className="bg-white/95 backdrop-blur-md border-b border-[#e6e5dd] shadow-sm py-3.5">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 rounded-xl bg-[#0f2438] flex items-center justify-center text-white transition-colors group-hover:bg-[#1b3a56]">
+              <Heart size={20} className="text-[#b48a3c]" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold tracking-tight text-[#0f2438] leading-tight">
+                LIFEWELL
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#b48a3c] font-bold">
+                Healthcare Ltd
+              </span>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-7">
+            {navLinks.map((link) => {
+              if (link.dropdown) {
+                return (
+                  <div key={link.name} className="relative group py-2">
+                    <button
+                      className={`flex items-center gap-1.5 text-sm font-semibold transition-colors hover:text-[#b48a3c] outline-none ${
+                        pathname.startsWith(link.href) ? "text-[#b48a3c]" : "text-[#182430]"
                       }`}
                     >
                       {link.name}
-                    </Link>
-                  )}
-                </div>
-              ))}
+                      <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200 opacity-60" />
+                    </button>
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[320px] bg-white rounded-xl shadow-lg border border-[#e6e5dd] p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="flex flex-col gap-1">
+                        {link.dropdown.map((sub) => (
+                          <Link
+                            key={sub.title}
+                            href={sub.href}
+                            className="p-2.5 rounded-lg hover:bg-[#faf9f6] transition-colors"
+                          >
+                            <span className="text-sm font-semibold text-[#0f2438] block">{sub.title}</span>
+                            <span className="text-xs text-[#536479] mt-0.5 block">{sub.description}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`text-sm font-semibold transition-colors hover:text-[#b48a3c] ${
+                    pathname === link.href ? "text-[#b48a3c]" : "text-[#182430]"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Action CTA */}
+          <div className="hidden lg:flex items-center gap-4">
+            <Link href="/contact">
+              <Button variant="primary" className="py-2.5 px-5 text-sm">
+                Request Care
+              </Button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 text-[#0f2438] hover:text-[#b48a3c]"
+            aria-label="Toggle Navigation"
+          >
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
+
+        {/* Mobile Dropdown */}
+        {isOpen && (
+          <div className="lg:hidden bg-white border-t border-[#e6e5dd] px-6 py-6 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <div key={link.name}>
+                <Link
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-base font-semibold block py-1 ${
+                    pathname === link.href ? "text-[#b48a3c]" : "text-[#0f2438]"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+                {link.dropdown && (
+                  <div className="pl-4 mt-2 flex flex-col gap-2 border-l-2 border-[#e6e5dd]">
+                    {link.dropdown.map((sub) => (
+                      <Link
+                        key={sub.title}
+                        href={sub.href}
+                        onClick={() => setIsOpen(false)}
+                        className="text-xs text-[#536479] py-0.5 block hover:text-[#b48a3c]"
+                      >
+                        {sub.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <div className="pt-4 border-t border-[#e6e5dd] flex flex-col gap-3">
+              <a href="tel:07836681415" className="text-sm font-bold text-[#0f2438] flex items-center gap-2">
+                <Phone size={16} className="text-[#b48a3c]" /> 07836 681415
+              </a>
               <Link href="/contact" onClick={() => setIsOpen(false)}>
-                <Button variant="primary" className="w-full mt-2">
-                  Request Care
+                <Button variant="primary" className="w-full justify-center">
+                  Request Care Assessment
                 </Button>
               </Link>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
-    </nav>
+      </nav>
+    </header>
   );
 };
