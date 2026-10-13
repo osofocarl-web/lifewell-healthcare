@@ -14,229 +14,217 @@ import {
   Coffee,
   Sun,
   CheckCircle2,
-  ArrowRight
+  ArrowRight,
+  PhoneCall
 } from "lucide-react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 
 const servicesData = [
   {
     id: "domiciliary",
-    title: "Domiciliary Care",
+    title: "Visiting Domiciliary Care",
     icon: Home,
-    whoIsItFor: "Individuals who need practical help with everyday tasks to remain safe, comfortable, and independent in their own homes.",
+    whoIsItFor: "Individuals who need practical, everyday help with daily routines to remain safe, comfortable, and independent in their own home.",
     includes: [
-      "Assistance with morning and evening routines",
-      "Light housekeeping, laundry, and meal preparation",
-      "Medication reminders and safe management assistance",
-      "Support with daily mobility and safe transfers"
+      "Assistance with morning and bedtime routines",
+      "Nutritious meal preparation and hydration support",
+      "Prompting and safe assistance with prescribed medication",
+      "Light household tasks, laundry, and tidy-up support",
+      "Safe transfers and mobility assistance around the home"
     ],
     benefits: [
-      "Maintain the comfort and safety of your own home",
-      "One-on-one tailored attention from consistent care staff",
-      "Safe, structured daily routines that prevent isolation"
+      "Stay in familiar, comfortable surroundings close to memories and pets",
+      "Dedicated, familiar carers who understand personal habits",
+      "Flexible call durations ranging from 30 minutes to extended day sits"
     ],
-    reassurance: "We work closely with family members to establish transparent communication channels, providing regular check-ins and updates on their loved one's wellness.",
-    dignityMessage: "Our staff are trained to work in your home as guests, delivering help with absolute discretion, respect for your privacy, and personal choice.",
+    reassurance: "We maintain close communication with family members, keeping you informed on daily wellness, appetite, and any changes in comfort.",
+    dignityMessage: "Our carers are guests in your home. We provide support with discretion, good humour, and total respect for personal privacy.",
   },
   {
     id: "personal-care",
-    title: "Personal Care",
+    title: "Dignified Personal Care",
     icon: UserRound,
-    whoIsItFor: "Individuals requiring support with highly private tasks such as bathing, dressing, grooming, and continence care.",
+    whoIsItFor: "Individuals requiring compassionate support with intimate daily tasks such as bathing, washing, dressing, and personal hygiene.",
     includes: [
-      "Bathing, showering, and hair washing",
-      "Assistance with dressing, grooming, and oral hygiene",
-      "Continence management and dignified personal care support",
-      "Skin care and pressure sore prevention awareness"
+      "Gentle assistance with bathing, showering, or washing",
+      "Dressing, morning grooming, hair care, and oral hygiene",
+      "Sensitive continence care and bathroom assistance",
+      "Skin care checks and pressure area awareness"
     ],
     benefits: [
-      "Restores physical hygiene and personal self-esteem",
-      "Reduces infection risks through routine physical hygiene support",
-      "Empowers individuals to face the day with physical comfort"
+      "Maintains personal dignity, freshness, and comfort each day",
+      "Reduces physical strain and fall risk during bathing and transfers",
+      "Relieves family members of stressful, physically demanding tasks"
     ],
-    reassurance: "Every member of our team is fully vetted and values-screened, ensuring that highly personal tasks are performed only by caregivers who display deep empathy and professionalism.",
-    dignityMessage: "Dignity is our core operating principle. We ensure that personal care is never rushed, allowing individuals to maintain control over their choices at all times.",
+    reassurance: "Every member of our team is Enhanced DBS checked and trained in dignified, unhurried personal care techniques.",
+    dignityMessage: "We work strictly at your own pace. Personal care is never rushed, ensuring you remain in total control of how and when care happens.",
   },
   {
     id: "dementia",
-    title: "Dementia Support",
+    title: "Dementia & Memory Support",
     icon: Brain,
-    whoIsItFor: "Individuals diagnosed with Alzheimer's or other forms of cognitive decline, who require familiar, structured support to live safely.",
+    whoIsItFor: "Individuals living with Alzheimer's or other forms of dementia who benefit from consistent, calm, and reassuring routines at home.",
     includes: [
-      "Cognitive stimulation activities and memory support",
-      "Gentle reassurance and positive behavior reinforcement",
-      "Establishing safe home environments to prevent wandering",
-      "Assistance with maintaining healthy eating and hydration"
+      "Patient, unhurried support with familiar morning routines",
+      "Memory prompts, reminiscence, and gentle cognitive activities",
+      "Encouragement with regular hydration and nutritious meals",
+      "Calm redirection and reassurance during periods of anxiety or sundowning",
+      "Home safety awareness to reduce confusion and fall risks"
     ],
     benefits: [
-      "Sustains cognitive function through tailored engagement",
-      "Reduces anxiety and confusion through routine consistency",
-      "Prevents dangerous wandering or household accidents"
+      "Reduces disorientation by keeping individuals in their familiar setting",
+      "Builds genuine rapport through regular, consistent carer matching",
+      "Offers invaluable respite and emotional reassurance for family carers"
     ],
-    reassurance: "We understand that dementia affects the entire family. We offer support sessions and educational resources for primary carers, ensuring they never feel isolated in this journey.",
-    dignityMessage: "We see the person behind the diagnosis. Our dementia support is based on active listening, validating feelings, and celebrating retained abilities.",
-  },
-  {
-    id: "mental-health",
-    title: "Mental Health & Emotional Wellbeing",
-    icon: Smile,
-    whoIsItFor: "Individuals managing depression, anxiety, or emotional recovery who need structured companionship, confidence-building, and therapeutic support.",
-    includes: [
-      "Compassionate, active listening and emotional support",
-      "Confidence-building and guided goal-setting",
-      "Support in establishing healthy daily habits and routines",
-      "Co-producing wellness plans with clinical and community teams"
-    ],
-    benefits: [
-      "Reduces isolation and restores social self-confidence",
-      "Encourages routine stability and proactive self-care",
-      "Builds emotional resilience in a non-judgmental environment"
-    ],
-    reassurance: "We collaborate closely with mental health coordinators and families, ensuring that our visits align with and reinforce broader therapeutic goals.",
-    dignityMessage: "We approach mental health with profound sensitivity, respect for personal boundaries, and absolute confidentiality.",
-  },
-  {
-    id: "companionship",
-    title: "Companionship & Social Connection",
-    icon: HeartHandshake,
-    whoIsItFor: "Older adults or individuals living alone who are at risk of loneliness and desire meaningful connection, conversation, and shared activities.",
-    includes: [
-      "Shared conversations, reading, and storytelling",
-      "Assistance with hobbies, puzzles, and creative crafts",
-      "Accompaniment on gentle walks or local community outings",
-      "Help with reading mail and keeping in touch with friends"
-    ],
-    benefits: [
-      "Significantly reduces isolation and situational depression",
-      "Keeps the mind active through shared cognitive tasks",
-      "Restores joy and connection through human friendship"
-    ],
-    reassurance: "We perform careful interest-matching, ensuring that your companion caregiver shares similar passions, background, or conversational preferences.",
-    dignityMessage: "We honor your stories and life experience. Our companionship is built on mutual respect and genuine, heart-to-heart equality.",
+    reassurance: "We work collaboratively with families to learn life histories, favourite music, and personal interests, tailoring visits around what brings peace and joy.",
+    dignityMessage: "We always see the person, not the diagnosis. We validate feelings, protect self-worth, and celebrate retained abilities.",
   },
   {
     id: "discharge",
-    title: "Hospital Discharge Support",
+    title: "Hospital Discharge & Reablement",
     icon: LogOut,
-    whoIsItFor: "Individuals returning home after a hospital stay who require immediate support to manage their recovery safely and prevent re-admission.",
+    whoIsItFor: "Individuals returning home after a hospital stay or illness who need practical rehabilitation support to regain their footing safely.",
     includes: [
-      "Pre-discharge home environment safety checks",
-      "Settling-in support, including food stocking and warm welcome",
-      "Immediate assistance with mobility and medication pickup",
-      "Liaison with hospital discharge teams and primary care GP"
+      "Preparation of the home before discharge (heating, food, safe pathways)",
+      "Settling-in visit on arrival day to unpack and ensure comfort",
+      "Reablement support to restore independent cooking, washing, and mobility",
+      "Coordination with NHS ward staff, community physiotherapists, and GPs",
+      "Medication verification and collection of discharge prescriptions"
     ],
     benefits: [
-      "Drastically reduces the risk of unplanned hospital re-admission",
-      "Ensures the physical space is immediately safe for recovery",
-      "Relieves families of sudden and complex care logistics"
+      "Substantially lowers the risk of emergency hospital readmission",
+      "Restores confidence and physical stamina in everyday home tasks",
+      "Provides family with immediate relief during a stressful hospital transition"
     ],
-    reassurance: "Our teams coordinate directly with NHS intermediate teams and ward managers to ensure care starts the precise moment you step through your front door.",
-    dignityMessage: "We aim to make your return home as comfortable and stress-free as possible, ensuring you feel completely secure and supported.",
+    reassurance: "Led by our Lead Occupational Therapist Ida Acquah, our reablement approach focuses on practical recovery so clients regain autonomy faster.",
+    dignityMessage: "Our goal is to help you do things for yourself again safely, encouraging small steps of daily progress with clinical safety.",
   },
   {
-    id: "rehabilitation",
-    title: "Rehabilitation Assistance",
-    icon: Stethoscope,
-    whoIsItFor: "Individuals recovering from strokes, fractures, or major surgery who need Occupational Therapy-guided physical and functional reinforcement.",
+    id: "companionship",
+    title: "Companionship & Social Support",
+    icon: HeartHandshake,
+    whoIsItFor: "Older adults or individuals living alone who would welcome friendly conversation, shared hobbies, or accompaniment on outings.",
     includes: [
-      "Assistance with therapeutic physical exercises",
-      "OT-guided training in daily living tasks and functional mobility",
-      "Safe introduction of adaptive aids and grab rails",
-      "Tracking and celebrating functional progress over time"
+      "Warm, unhurried conversation, shared cups of tea, and companionship",
+      "Accompanied walks in the local park, garden strolls, or high-street visits",
+      "Assistance with hobbies, puzzles, reading, or craft activities",
+      "Help with reading letters, correspondence, and organizing appointments",
+      "Support to attend local community groups, clubs, or church gatherings"
     ],
     benefits: [
-      "Accelerates physical strength and range of motion",
-      "Builds lasting confidence in performing self-care independently",
-      "Maximizes natural ability through targeted goal-tracking"
+      "Counteracts loneliness and situational depression effectively",
+      "Maintains cognitive vitality through stimulating conversation",
+      "Provides reassurance to family members living at a distance"
     ],
-    reassurance: "Led by our Lead Occupational Therapist Ida Acquah, our rehabilitation care translates clinical advice into practical, safe, daily actions in your home.",
-    dignityMessage: "We focus on what you can do, empowering you to reclaim your independence step-by-step with safety and confidence.",
-  },
-  {
-    id: "community-access",
-    title: "Community Access & Integration",
-    icon: MapPin,
-    whoIsItFor: "Individuals who need reliable physical assistance to attend appointments, visit social centers, or engage in civic life.",
-    includes: [
-      "Accompaniment and safe transport to medical appointments",
-      "Support with grocery shopping and local high street errands",
-      "Assistance attending local support groups or community hubs",
-      "Encouraging active engagement in spiritual or faith gatherings"
-    ],
-    benefits: [
-      "Combats physical isolation by keeping community doors open",
-      "Ensures vital health and social appointments are never missed",
-      "Re-integrates individuals into familiar social settings"
-    ],
-    reassurance: "Our staff are fully trained in travel safety and transfer techniques, giving you and your family total confidence while out in public.",
-    dignityMessage: "We facilitate your active inclusion in society, ensuring you can participate in public life with self-esteem and ease.",
+    reassurance: "We carefully pair carers and clients based on shared interests, background, and conversational chemistry.",
+    dignityMessage: "Companionship is based on equal human connection and mutual respect. We are here as trusted friends and dependable companions.",
   },
   {
     id: "respite-care",
-    title: "Respite Care & Carer Support",
+    title: "Respite Support for Family Carers",
     icon: Coffee,
-    whoIsItFor: "Family caregivers who need a temporary break to rest, recharge, or attend to personal commitments, knowing their relative is safe.",
+    whoIsItFor: "Family caregivers who need regular scheduled breaks or short-term relief to rest, recharge, or attend to personal commitments.",
     includes: [
-      "Seamless takeover of existing domestic care routines",
-      "Full professional coverage of personal care and medications",
-      "Continual reassurance and emergency response availability",
+      "Seamless takeover of daily domestic and personal care routines",
+      "Daytime sitting service or scheduled multi-hour visits",
+      "Nutritious meal preparation and companionship while you are away",
       "Structured handovers before and after the respite period"
     ],
     benefits: [
-      "Allows primary carers to avoid burnout and rest deeply",
-      "Ensures the client experiences zero disruption in care quality",
-      "Provides peace of mind with vetted, professional caregivers"
+      "Prevents family caregiver burnout and protects physical and mental wellbeing",
+      "Ensures zero disruption to your relative's familiar routines",
+      "Gives complete peace of mind while you take time for yourself"
     ],
-    reassurance: "We respect your established care routines and family boundaries, committing to mirror them exactly so your relative feels comfortable in your absence.",
-    dignityMessage: "We step in with humility and absolute respect, ensuring that your relative's daily preferences and autonomy are maintained intact.",
+    reassurance: "We carefully mirror your existing family routine so your loved one feels secure, relaxed, and well-cared-for throughout your break.",
+    dignityMessage: "We view family carers as partners. We step in with warmth, humility, and meticulous attention to your relative's comfort.",
+  },
+  {
+    id: "rehabilitation",
+    title: "Occupational Therapy Led Rehabilitation",
+    icon: Stethoscope,
+    whoIsItFor: "Individuals recovering from strokes, joint replacements, falls, or mobility loss who require clinically guided rehabilitation at home.",
+    includes: [
+      "Functional living skills assessments conducted in your home",
+      "OT-guided daily activity practice (kitchen tasks, transfers, dressing)",
+      "Assessment for adaptive equipment, grab rails, and mobility aids",
+      "Falls risk reduction and ergonomic environment adaptations",
+      "Tracking functional milestones and coordination with NHS community teams"
+    ],
+    benefits: [
+      "Bridges the gap between clinical hospital advice and practical home life",
+      "Accelerates recovery of physical independence and movement confidence",
+      "Reduces dependency on long-term full care where rehabilitation is possible"
+    ],
+    reassurance: "Ida Acquah brings over 10 years of NHS intermediate care experience to supervise assessments and practical rehabilitative care plans.",
+    dignityMessage: "We focus on what you can do, providing gentle encouragement and safe methods so you can reclaim your daily life.",
+  },
+  {
+    id: "community-access",
+    title: "Community Access & Errands",
+    icon: MapPin,
+    whoIsItFor: "Individuals who need reliable physical assistance to run errands, visit the shops, or attend hospital and GP appointments.",
+    includes: [
+      "Accompaniment and safe transport support to medical appointments",
+      "Assistance with weekly food shopping, pharmacy visits, and errands",
+      "Support attending family events, social clubs, or community centers",
+      "Safe walking and transfer assistance in public spaces"
+    ],
+    benefits: [
+      "Keeps individuals connected to the wider community and high street",
+      "Removes anxiety around negotiating transport and busy public areas",
+      "Ensures important healthcare appointments are attended punctually"
+    ],
+    reassurance: "Our carers are trained in safe outdoor mobility and transfer support, keeping clients safe and confident at all times.",
+    dignityMessage: "Staying part of your local community is essential to wellbeing. We help you stay out and about with dignity.",
   },
   {
     id: "live-in",
-    title: "Future Live-In Care",
+    title: "Live-In Care (In Preparation)",
     icon: Sun,
-    whoIsItFor: "Individuals who require round-the-clock peace of mind and live-in assistance, but prefer to remain in their own home rather than move to residential care.",
+    whoIsItFor: "Individuals who require round-the-clock reassurance and 24-hour presence in their home as an alternative to moving into a care home.",
     includes: [
-      "A dedicated, professional caregiver residing in your home",
-      "Continuous 24-hour presence for safety and daily assistance",
-      "Total management of nutrition, medication, and household care",
-      "Ongoing clinical oversight by our Lead Occupational Therapist"
+      "A dedicated, professional care worker living in your home",
+      "Round-the-clock presence for safety, companionship, and support",
+      "Complete management of household meals, light housekeeping, and routines",
+      "Regular clinical oversight and family coordination"
     ],
     benefits: [
-      "Complete, 24/7 security and assistance in a familiar place",
-      "A highly cost-effective and dignified alternative to care homes",
-      "Deep personal companionship and consistent clinical supervision"
+      "Allows individuals to stay in their beloved family home for life",
+      "Continuity of one-to-one attention that residential homes cannot match",
+      "Reassurance for family knowing their loved one is never alone"
     ],
-    reassurance: "We are currently designed around professional governance and are preparing for CQC registration to expand our capability. Register your interest to be notified as these services develop.",
-    dignityMessage: "We co-create a live-in care routine that completely revolves around your personal rhythm, life choices, and physical comfort.",
+    reassurance: "We are developing this service in alignment with our CQC registration pathway. Please get in touch to discuss forward planning.",
+    dignityMessage: "A live-in service co-produced around your personal rhythm, dietary choices, and home traditions.",
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <div className="bg-brand-bg min-h-screen pt-4 pb-24">
+    <div className="bg-[#faf9f6] min-h-screen py-10 md:py-16">
+      
       {/* Header */}
-      <section className="container mx-auto px-6 mb-16 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <span className="text-brand-gold font-black uppercase tracking-[0.4em] text-xs mb-6 block">Our Professional Suite</span>
-          <h1 className="text-6xl md:text-8xl font-outfit mb-10 text-brand-blue-dark leading-tight">World-Class <span className="text-brand-blue">Healthcare Services</span></h1>
-          <p className="text-xl text-text-muted max-w-4xl mx-auto leading-relaxed font-medium">
-            Comprehensive, compassionate, and professional healthcare solutions tailored to every stage of life. We bridge clinical excellence with the emotional warmth of person-centred support.
+      <section className="container mx-auto px-6 mb-12">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2.5">
+            Home Care &amp; Support Services • Northamptonshire
+          </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f2438] mb-4">
+            Care shaped around your family&apos;s routine
+          </h1>
+          <p className="text-base md:text-lg text-[#4e6074] leading-relaxed">
+            From daily visiting care and companionship to specialist dementia support and hospital recovery, we provide reliable, unhurried assistance to help you or your loved one live safely and comfortably at home.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* Anchor Navigation */}
-      <section className="container mx-auto px-6 mb-16">
-        <div className="flex flex-wrap justify-center gap-3 p-4 bg-white rounded-3xl border border-gray-100 shadow-sm">
+      <section className="container mx-auto px-6 mb-14">
+        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-2 p-2.5 bg-white rounded-xl border border-[#e6e5dd] shadow-sm">
           {servicesData.map((service) => (
             <a
               key={service.id}
               href={`#${service.id}`}
-              className="px-4 py-2 rounded-xl text-xs font-bold text-brand-blue hover:bg-brand-gold hover:text-white transition-premium"
+              className="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-[#0f2438] hover:bg-[#faf9f6] hover:text-[#b48a3c] transition-colors"
             >
               {service.title}
             </a>
@@ -245,123 +233,136 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="container mx-auto px-6 mb-32 flex flex-col gap-16">
-        {servicesData.map((service, i) => {
+      <section className="container mx-auto px-6 mb-20 flex flex-col gap-10 max-w-5xl">
+        {servicesData.map((service) => {
           const IconComponent = service.icon;
           return (
-            <motion.div
+            <div
               id={service.id}
               key={service.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="bg-white rounded-[3rem] shadow-sm border border-gray-100 p-8 lg:p-16 relative overflow-hidden"
+              className="bg-white rounded-2xl border border-[#e6e5dd] p-7 md:p-10 shadow-sm scroll-mt-28"
             >
-              {/* Decorative background icon */}
-              <div className="absolute right-0 bottom-0 translate-x-10 translate-y-10 text-gray-50/50 -z-0 pointer-events-none">
-                <IconComponent size={240} />
-              </div>
-
-              <div className="relative z-10">
-                {/* Title Strip */}
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 bg-brand-bg rounded-2xl flex items-center justify-center text-brand-blue">
-                    <IconComponent size={28} />
+              {/* Title Strip */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#e6e5dd] mb-8">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-[#faf9f6] border border-[#e6e5dd] rounded-xl flex items-center justify-center text-[#b48a3c] shrink-0">
+                    <IconComponent size={24} />
                   </div>
                   <div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-brand-blue-dark">{service.title}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#0f2438]">{service.title}</h2>
                     {service.id === "live-in" && (
-                      <span className="inline-block px-3 py-1 bg-brand-gold/10 text-brand-gold text-[10px] uppercase font-black tracking-widest rounded-full mt-1">Preparing to Launch</span>
+                      <span className="inline-block px-2.5 py-0.5 bg-[#fbf7ee] text-[#b48a3c] border border-[#e6d8b5] text-[10px] uppercase font-bold tracking-wider rounded-md mt-1">
+                        Service in Preparation
+                      </span>
                     )}
                   </div>
                 </div>
 
-                {/* Main Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-10">
-                  {/* Left Column: Who & What */}
-                  <div>
-                    <div className="mb-6">
-                      <span className="text-[10px] uppercase tracking-widest font-black text-brand-gold block mb-2">Who It Is For</span>
-                      <p className="text-text-muted text-base leading-relaxed font-medium">{service.whoIsItFor}</p>
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase tracking-widest font-black text-brand-gold block mb-3">What Our Support Includes</span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {service.includes.map((item, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <CheckCircle2 size={16} className="text-brand-blue shrink-0 mt-0.5" />
-                            <span className="text-xs text-text-muted leading-relaxed font-bold">{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                <Link href={`/contact?service=${service.id}`} className="shrink-0">
+                  <Button variant="outline" className="text-xs px-4 py-2">
+                    Enquire About This Care &rarr;
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Main Content Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                {/* Left Column: Who & What */}
+                <div>
+                  <div className="mb-6">
+                    <span className="text-[11px] uppercase tracking-wider font-bold text-[#b48a3c] block mb-2">
+                      Who this is for
+                    </span>
+                    <p className="text-[#4e6074] text-sm md:text-base leading-relaxed">
+                      {service.whoIsItFor}
+                    </p>
                   </div>
 
-                  {/* Right Column: Benefits, Reassurance & Dignity */}
-                  <div className="border-t lg:border-t-0 lg:border-l border-gray-100 pt-8 lg:pt-0 lg:pl-12 flex flex-col gap-6">
-                    <div>
-                      <span className="text-[10px] uppercase tracking-widest font-black text-brand-gold block mb-2">Key Health & Daily Benefits</span>
-                      <ul className="list-disc pl-4 text-xs text-text-muted space-y-2 leading-relaxed font-medium">
-                        {service.benefits.map((benefit, index) => (
-                          <li key={index}>{benefit}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase tracking-widest font-black text-brand-gold block mb-1">Family Reassurance</span>
-                      <p className="text-xs text-text-muted leading-relaxed font-medium">{service.reassurance}</p>
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase tracking-widest font-black text-brand-gold block mb-1">Our Dignity & Safety Standard</span>
-                      <p className="text-xs text-text-muted leading-relaxed font-medium">{service.dignityMessage}</p>
+                  <div>
+                    <span className="text-[11px] uppercase tracking-wider font-bold text-[#b48a3c] block mb-3">
+                      What our support includes
+                    </span>
+                    <div className="space-y-2.5">
+                      {service.includes.map((item, index) => (
+                        <div key={index} className="flex items-start gap-2.5">
+                          <CheckCircle2 size={16} className="text-[#b48a3c] shrink-0 mt-0.5" />
+                          <span className="text-xs md:text-sm text-[#182430] leading-relaxed">{item}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
 
-                {/* CTA Bar */}
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-8 border-t border-gray-100">
-                  <p className="text-xs text-text-muted font-medium">
-                    * Committed to quality, safety and dignity under governance-led planning.
-                  </p>
-                  <Link href={`/contact?service=${service.id}`}>
-                    <Button variant="primary" className="px-6 py-3 text-sm flex items-center gap-2">
-                      Speak With Our Team <ArrowRight size={16} />
-                    </Button>
-                  </Link>
+                {/* Right Column: Benefits, Reassurance & Dignity */}
+                <div className="border-t lg:border-t-0 lg:border-l border-[#e6e5dd] pt-6 lg:pt-0 lg:pl-8 flex flex-col justify-between space-y-6">
+                  <div>
+                    <span className="text-[11px] uppercase tracking-wider font-bold text-[#b48a3c] block mb-2">
+                      Key family benefits
+                    </span>
+                    <ul className="space-y-2">
+                      {service.benefits.map((benefit, index) => (
+                        <li key={index} className="text-xs md:text-sm text-[#4e6074] flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#0f2438] shrink-0 mt-2" />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-[#faf9f6] p-4 rounded-xl border border-[#e6e5dd]">
+                    <span className="text-[11px] uppercase tracking-wider font-bold text-[#0f2438] block mb-1">
+                      Family peace of mind
+                    </span>
+                    <p className="text-xs text-[#4e6074] leading-relaxed">
+                      {service.reassurance}
+                    </p>
+                  </div>
+
+                  <div className="text-xs text-[#536479] italic">
+                    &ldquo;{service.dignityMessage}&rdquo;
+                  </div>
                 </div>
               </div>
-            </motion.div>
+
+              {/* Bottom strip */}
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-5 border-t border-[#e6e5dd] text-xs text-[#4e6074]">
+                <span>All care visits planned in accordance with professional clinical standards.</span>
+                <Link href={`/contact?service=${service.id}`} className="font-semibold text-[#0f2438] hover:text-[#b48a3c] flex items-center gap-1">
+                  Start an assessment enquiry <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
           );
         })}
       </section>
 
-      {/* Bespoke Care CTA */}
-      <section className="bg-section-soft py-32 border-y border-brand-blue/5">
-        <div className="container mx-auto px-6">
-          <div className="bg-brand-blue-dark rounded-[5rem] p-16 lg:p-28 text-white text-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,45,89,0.4)]">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-blue via-transparent to-brand-gold/10 opacity-30"></div>
-            <div className="relative z-10">
-              <h2 className="text-5xl md:text-7xl font-outfit mb-8 leading-tight">Need a Bespoke Care Plan?</h2>
-              <p className="text-blue-100/70 text-2xl mb-14 max-w-3xl mx-auto font-medium leading-relaxed">
-                Every individual is unique. We provide comprehensive consultations to design a care package that perfectly aligns with your family&apos;s specific needs and clinical requirements.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <Link href="/contact">
-                  <Button variant="secondary" className="px-12 py-6 text-xl shadow-2xl">
-                    Speak With Our Team
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button variant="outline" className="px-12 py-6 text-xl border-white/40 text-white hover:bg-white hover:text-brand-blue">
-                    Start a Care Enquiry
-                  </Button>
-                </Link>
-              </div>
-            </div>
+      {/* Bespoke Care Consultation Callout */}
+      <section className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto bg-[#0f2438] text-white rounded-2xl p-8 md:p-12 text-center">
+          <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2.5">
+            Free Care Consultation
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+            Not sure which level of care is needed?
+          </h2>
+          <p className="text-white/80 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+            Every family&apos;s situation is unique. Call Ida Acquah and our care coordination team for a friendly, unhurried discussion. We can visit your home to carry out a free initial assessment and advise you with complete transparency.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/contact">
+              <Button variant="secondary" className="px-6 py-3 text-sm">
+                Book a Free Consultation
+              </Button>
+            </Link>
+            <a href="tel:07836681415">
+              <Button variant="outline" className="px-6 py-3 text-sm bg-white/10 border-white/20 text-white hover:bg-white hover:text-[#0f2438]">
+                <PhoneCall size={16} /> Call 07836 681415
+              </Button>
+            </a>
           </div>
         </div>
       </section>
+
     </div>
   );
 }

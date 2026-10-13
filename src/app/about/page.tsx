@@ -1,170 +1,200 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
-import { Target, Eye, CheckCircle2, Mail, Phone } from "lucide-react";
+import Link from "next/link";
+import { Target, Eye, CheckCircle2, Mail, Phone, MapPin, ShieldCheck, Heart } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 export default function AboutPage() {
   return (
-    <div className="bg-brand-bg min-h-screen pt-4 pb-24">
+    <div className="bg-[#faf9f6] min-h-screen py-10 md:py-16">
       {/* Header */}
-      <section className="container mx-auto px-6 mb-16 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <span className="text-brand-gold font-black uppercase tracking-[0.4em] text-xs mb-6 block">Our Approach to Care</span>
-          <h1 className="text-6xl md:text-8xl font-outfit mb-8 text-brand-blue-dark leading-tight">
-            Restoring <span className="text-brand-blue">Independence</span> &amp; Dignity at Home
+      <section className="container mx-auto px-6 mb-14 text-center">
+        <div className="max-w-3xl mx-auto">
+          <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2.5">
+            About Lifewell Healthcare Ltd
+          </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f2438] mb-4">
+            Combining clinical insight with heartfelt personal care
           </h1>
-          <p className="text-2xl text-text-muted max-w-4xl mx-auto leading-relaxed font-medium">
-            Lifewell Healthcare Ltd is an independent, family-focused home care and wellbeing support provider based in Northampton. We combine Occupational Therapy expertise with heartfelt personal care to help you and your loved ones live safely and happily at home.
+          <p className="text-base md:text-lg text-[#4e6074] leading-relaxed">
+            Based at 64 Broadway in Northampton, Lifewell Healthcare Ltd is an independent domiciliary care provider founded to deliver unhurried, dignity-first support shaped by registered Occupational Therapy leadership.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* Vision & Mission */}
-      <section className="container mx-auto px-6 mb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <motion.div 
-            className="bg-white p-16 rounded-[3rem] shadow-sm border border-gray-100 card-hover-premium transition-premium"
-          >
-            <div className="w-20 h-20 bg-brand-blue/5 rounded-2xl flex items-center justify-center mb-10">
-              <Eye className="text-brand-blue" size={40} />
+      <section className="container mx-auto px-6 mb-16 max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white p-8 md:p-10 rounded-2xl border border-[#e6e5dd] shadow-sm">
+            <div className="w-12 h-12 bg-[#faf9f6] border border-[#e6e5dd] rounded-xl flex items-center justify-center mb-6">
+              <Eye className="text-[#b48a3c]" size={24} />
             </div>
-            <h2 className="text-4xl font-bold mb-8 text-brand-blue-dark">Our Vision</h2>
-            <p className="text-text-muted text-xl leading-relaxed font-medium">
-              To be Northamptonshire’s most trusted home care partner, known for dependable, unrushed visits, proactive clinical insight, and the warmth of a true family relationship.
+            <h2 className="text-xl md:text-2xl font-bold mb-3 text-[#0f2438]">Our Vision</h2>
+            <p className="text-sm md:text-base text-[#4e6074] leading-relaxed">
+              To be Northamptonshire&apos;s most trusted home care partner, recognized for dependable, unrushed visits, continuity of familiar faces, and empowering individuals to remain safe and fulfilled in their own homes.
             </p>
-          </motion.div>
-
-          <motion.div 
-            className="bg-white p-16 rounded-[3rem] shadow-sm border border-gray-100 card-hover-premium transition-premium"
-          >
-            <div className="w-20 h-20 bg-brand-gold/5 rounded-2xl flex items-center justify-center mb-10">
-              <Target className="text-brand-gold" size={40} />
-            </div>
-            <h2 className="text-4xl font-bold mb-8 text-brand-blue-dark">Our Mission</h2>
-            <p className="text-text-muted text-xl leading-relaxed font-medium">
-              To provide thoughtful, person-centred care that listens closely to each person’s story, supports their independence, and gives families absolute confidence in the safety of their loved ones.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Clinical Leadership */}
-      <section id="clinical-leadership" className="py-24 border-y border-brand-bg bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <span className="text-brand-gold font-black uppercase tracking-[0.4em] text-sm mb-6 block">Professional Governance</span>
-            <h2 className="text-5xl md:text-6xl font-outfit text-brand-blue-dark">Clinical Leadership</h2>
           </div>
 
-          <div className="max-w-6xl mx-auto">
-            {/* Ida Acquah */}
-            <div className="flex flex-col lg:flex-row items-center gap-20">
-              <div className="flex-1 relative">
-                <div className="relative aspect-[4/5] rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(197,160,40,0.2)] border-[16px] border-brand-bg bg-brand-bg">
-                  <Image
-                    src="/images/ida_acquah.jpg"
-                    alt="Ida Acquah - Clinical Lead"
-                    fill
-                    className="object-cover object-top hover:scale-105 transition-premium duration-1000"
-                    priority
-                  />
-                </div>
-                <div className="absolute -bottom-10 -right-10 w-44 h-44 bg-brand-gold rounded-full flex flex-col items-center justify-center text-white font-black shadow-2xl border-8 border-white">
-                  <span className="text-xs uppercase tracking-widest mb-1">Clinical Lead</span>
-                  <CheckCircle2 size={24} />
-                </div>
-              </div>
-              <div className="flex-1">
-                <h2 className="text-5xl font-outfit mb-4 leading-tight text-brand-blue-dark">Ida Acquah</h2>
-                <p className="text-brand-gold font-black mb-8 uppercase tracking-widest text-sm">Clinical Lead / Lead Occupational Therapist</p>
-                
-                <div className="space-y-6 text-text-muted text-lg leading-relaxed mb-10">
-                  <p>
-                    Ida Acquah is a HCPC-registered Occupational Therapist and member of the Royal College of Occupational Therapists (RCOT) since 2010, with over 10 years’ experience across NHS intermediate care and adult social services. Her deep understanding of functional rehabilitation and therapeutic goal-setting forms the clinical backbone of Lifewell Healthcare Ltd.
-                  </p>
-                  <p>
-                    Known for her calm, compassionate, and practical approach, she specializes in person-centred care that empowers individuals to regain confidence and quality of life. Under Ida's expert guidance, our care plans focus on functional independence—meaning we do not simply perform routine chores for individuals, but work side-by-side with them to restore daily living skills, evaluate home safety, and facilitate smooth transitions from acute settings back to the comfort of home.
-                  </p>
-                  <p>
-                    Our clinical philosophy is built around complete reassurance for families. We believe that family members deserve absolute peace of mind, which is why we provide structured updates, transparent communication, and OT-led assessments that place dignity and clinical safety at the forefront of every support program we deliver.
-                  </p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 pt-4">
-                    {[
-                      "Functional Assessments",
-                      "Moving and Handling",
-                      "Cognitive Screening",
-                      "Equipment Provision",
-                      "Hospital Discharge Planning",
-                      "NHS Intermediate Care"
-                    ].map((skill, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
-                        <span className="font-bold text-brand-blue-dark text-sm tracking-wide">{skill}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap gap-4 pt-6">
-                    <div className="px-5 py-2 bg-brand-blue/5 rounded-full text-[10px] font-black text-brand-blue uppercase tracking-widest border border-brand-blue/10">
-                      HCPC Registered
-                    </div>
-                    <div className="px-5 py-2 bg-brand-blue/5 rounded-full text-[10px] font-black text-brand-blue uppercase tracking-widest border border-brand-blue/10">
-                      RCOT Member Since 2010
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-brand-bg p-8 rounded-3xl border border-gray-100 flex flex-col md:flex-row gap-8 items-center justify-between">
-                  <div>
-                    <h4 className="text-sm font-black text-brand-blue uppercase tracking-widest mb-4">Clinical Contact</h4>
-                    <div className="flex flex-col gap-3">
-                      <a href="mailto:contact@lifewellhealthcare.org" className="flex items-center gap-3 text-brand-blue hover:text-brand-gold transition-premium font-bold">
-                        <Mail size={18} /> contact@lifewellhealthcare.org
-                      </a>
-                      <a href="tel:07836681415" className="flex items-center gap-3 text-brand-blue hover:text-brand-gold transition-premium font-bold">
-                        <Phone size={18} /> 07836 681415
-                      </a>
-                    </div>
-                  </div>
-                  <div className="hidden md:block h-12 w-[1px] bg-gray-200"></div>
-                  <div className="text-center md:text-left">
-                    <span className="text-[10px] text-brand-gold font-black uppercase tracking-widest block mb-2">Clinical Expertise</span>
-                    <span className="text-brand-blue-dark font-bold text-sm">HCPC & RCOT Certified</span>
-                  </div>
-                </div>
-              </div>
+          <div className="bg-white p-8 md:p-10 rounded-2xl border border-[#e6e5dd] shadow-sm">
+            <div className="w-12 h-12 bg-[#faf9f6] border border-[#e6e5dd] rounded-xl flex items-center justify-center mb-6">
+              <Target className="text-[#b48a3c]" size={24} />
             </div>
+            <h2 className="text-xl md:text-2xl font-bold mb-3 text-[#0f2438]">Our Mission</h2>
+            <p className="text-sm md:text-base text-[#4e6074] leading-relaxed">
+              To provide thoughtful, person-centred care that listens closely to each person&apos;s life story, respects their dignity and choices, and gives families absolute confidence in the safety and wellbeing of their relatives.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="container mx-auto px-6 py-24">
-        <div className="text-center mb-20">
-          <span className="text-brand-gold font-black uppercase tracking-[0.4em] text-xs mb-6 block">The Lifewell Core</span>
-          <h2 className="text-5xl font-outfit mb-6 text-brand-blue-dark">Governance-Led Values</h2>
-          <p className="text-xl text-text-muted max-w-2xl mx-auto font-medium">The non-negotiable principles that ensure we deliver safe, effective, and compassionate care.</p>
+      {/* Clinical Leadership (Ida Acquah) */}
+      <section id="clinical-leadership" className="container mx-auto px-6 mb-20 max-w-5xl">
+        <div className="bg-white rounded-2xl border border-[#e6e5dd] p-8 md:p-12 shadow-sm">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+            
+            {/* Lead Photo */}
+            <div className="w-full lg:w-5/12 max-w-[340px] shrink-0">
+              <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-[#e6e5dd] shadow-sm">
+                <Image
+                  src="/images/ida_acquah.jpg"
+                  alt="Ida Acquah - Clinical Lead and Lead Occupational Therapist"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+              <div className="mt-4 p-3.5 bg-[#faf9f6] rounded-xl border border-[#e6e5dd] text-center">
+                <span className="text-xs font-bold text-[#0f2438] block">Ida Acquah</span>
+                <span className="text-[11px] text-[#b48a3c] font-semibold block">HCPC Reg: OT • RCOT Member since 2010</span>
+              </div>
+            </div>
+
+            {/* Biography */}
+            <div className="flex-1">
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2">
+                Clinical Governance &amp; Leadership
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0f2438] mb-2">
+                Ida Acquah
+              </h2>
+              <p className="text-sm font-semibold text-[#b48a3c] mb-5">
+                Clinical Lead &amp; Lead Occupational Therapist
+              </p>
+
+              <div className="space-y-4 text-sm md:text-base text-[#4e6074] leading-relaxed mb-6">
+                <p>
+                  Ida Acquah is a registered Occupational Therapist with the Health and Care Professions Council (HCPC) and a continuous member of the Royal College of Occupational Therapists (RCOT) since 2010. She brings over a decade of clinical experience gained across NHS intermediate care, adult social services, and rehabilitation wards.
+                </p>
+                <p>
+                  Under Ida&apos;s guidance, Lifewell Healthcare blends hands-on domestic warmth with clinical expertise in reablement. We don&apos;t just complete tasks on behalf of clients; we evaluate home environments, recommend practical adaptations, and help individuals maintain their daily living skills safely.
+                </p>
+                <p>
+                  &ldquo;Home is where people heal best. Our job is to give families the reassurance that their loved one is safe, respected, and supported by a team that genuinely cares.&rdquo;
+                </p>
+              </div>
+
+              {/* Clinical competency tags */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-4 border-t border-[#e6e5dd] text-xs text-[#0f2438] mb-6">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={15} className="text-[#b48a3c] shrink-0" />
+                  <span>Functional Living Assessments</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={15} className="text-[#b48a3c] shrink-0" />
+                  <span>Moving &amp; Handling Protocols</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={15} className="text-[#b48a3c] shrink-0" />
+                  <span>Dementia &amp; Memory Reassurance</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={15} className="text-[#b48a3c] shrink-0" />
+                  <span>NHS Hospital Discharge Coordination</span>
+                </div>
+              </div>
+
+              {/* Contact direct */}
+              <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#e6e5dd]">
+                <a href="tel:07836681415" className="text-xs font-bold text-[#0f2438] hover:text-[#b48a3c] flex items-center gap-1.5">
+                  <Phone size={14} className="text-[#b48a3c]" /> 07836 681415
+                </a>
+                <span className="text-[#e6e5dd]">•</span>
+                <a href="mailto:contact@lifewellhealthcare.org" className="text-xs font-bold text-[#0f2438] hover:text-[#b48a3c] flex items-center gap-1.5">
+                  <Mail size={14} className="text-[#b48a3c]" /> contact@lifewellhealthcare.org
+                </a>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      </section>
+
+      {/* Core Values */}
+      <section className="container mx-auto px-6 mb-20 max-w-5xl">
+        <div className="text-center mb-12">
+          <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2.5">
+            Our Foundation
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0f2438] mb-3">
+            Core Principles That Guide Every Visit
+          </h2>
+          <p className="text-sm md:text-base text-[#4e6074] max-w-2xl mx-auto">
+            These non-negotiable standards define how we recruit staff, conduct visits, and communicate with families.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
-            { title: "Dignity", desc: "Upholding the self-worth of every individual in our care." },
-            { title: "Accountability", desc: "Full transparency in our clinical and operational actions." },
-            { title: "Compassion", desc: "Deeply human care delivered with clinical precision." },
-            { title: "Safety", desc: "Rigorous safeguarding and safer recruitment protocols." },
+            { 
+              title: "Dignity", 
+              desc: "Treating every person with deep personal respect, working at their pace, and protecting their privacy at all times." 
+            },
+            { 
+              title: "Transparency", 
+              desc: "Clear notes, open communication with family, honest pricing, and full candour in everything we do." 
+            },
+            { 
+              title: "Compassion", 
+              desc: "Warm, unhurried care delivered by kind carers who take the time to listen and build genuine trust." 
+            },
+            { 
+              title: "Safety", 
+              desc: "Rigorous Enhanced DBS checks, safer recruitment, and robust adult safeguarding policies." 
+            },
           ].map((val, i) => (
-            <div key={i} className="text-center p-12 rounded-[2.5rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-premium">
-              <h4 className="text-2xl font-black mb-4 text-brand-blue tracking-tight">{val.title}</h4>
-              <p className="text-sm text-text-muted leading-relaxed font-medium">{val.desc}</p>
+            <div key={i} className="p-6 rounded-2xl bg-white border border-[#e6e5dd] shadow-sm">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#b48a3c] block mb-2 font-mono">0{i + 1}</span>
+              <h3 className="text-lg font-bold mb-2 text-[#0f2438]">{val.title}</h3>
+              <p className="text-xs md:text-sm text-[#4e6074] leading-relaxed">{val.desc}</p>
             </div>
           ))}
         </div>
       </section>
+
+      {/* Office Hub Strip */}
+      <section className="container mx-auto px-6 max-w-5xl">
+        <div className="bg-[#0f2438] text-white rounded-2xl p-8 md:p-10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div>
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-1">
+              Registered Office
+            </span>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+              Lifewell Healthcare Ltd • Northampton Hub
+            </h3>
+            <p className="text-white/80 text-xs md:text-sm">
+              64 Broadway, Northampton, NN1 4SQ • Company No: 14638409 • ICO: ZC026072
+            </p>
+          </div>
+          <Link href="/contact" className="shrink-0">
+            <Button variant="secondary" className="px-6 py-3 text-sm">
+              Get in Touch With Our Office
+            </Button>
+          </Link>
+        </div>
+      </section>
+
     </div>
   );
 }

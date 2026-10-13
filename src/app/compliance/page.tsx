@@ -1,163 +1,176 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { ShieldCheck, Scale, FileText, Lock, CheckCircle, Award, ShieldAlert, Heart, GraduationCap } from "lucide-react";
+import Link from "next/link";
+import { ShieldCheck, Scale, FileText, Lock, CheckCircle2, Award, Heart, PhoneCall } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 const principles = [
   { 
     title: "Safer Recruitment", 
-    desc: "Rigorous DBS checks, professional referencing, identity verification, and values-based interviewing for all staff.", 
+    desc: "Mandatory Enhanced DBS checks, full employment history verification, identity verification, and face-to-face values-based interviewing.", 
     icon: ShieldCheck 
   },
   { 
     title: "Adult Safeguarding", 
-    desc: "Mandatory training and immediate reporting protocols to protect all individuals from any form of harm or neglect.", 
+    desc: "Rigorous staff training and immediate reporting protocols with local Multi-Agency Safeguarding Hubs (MASH) under the Care Act 2014.", 
     icon: Lock 
   },
   { 
-    title: "Quality Assurance", 
-    desc: "Regular audits, client feedback loops, and internal monitoring systems to ensure service excellence.", 
+    title: "Quality & Audits", 
+    desc: "Regular care plan reviews, medication record audits, and direct family feedback to maintain high care standards.", 
     icon: Scale 
   },
   { 
-    title: "Privacy & GDPR", 
-    desc: "Full compliance with GDPR (ICO: ZC026072) and a core commitment to maintaining the confidentiality of those we serve.", 
+    title: "Data Protection & Privacy", 
+    desc: "Full compliance with UK GDPR and the Data Protection Act 2018 (Registered with the ICO: ZC026072).", 
     icon: FileText 
   },
 ];
 
 const complianceAreas = [
   {
-    title: "Preparing for CQC Registration",
-    desc: "Lifewell Healthcare Ltd is structured around the five key questions asked by the Care Quality Commission (CQC): Is the service Safe, Effective, Caring, Responsive, and Well-led? We are systematically preparing our registration pathways with rigorous governance planning and high-standard administrative policy writing."
+    title: "Care Quality Commission (CQC) Preparedness",
+    desc: "Lifewell Healthcare Ltd is structured directly around the CQC's five fundamental questions: Is the service Safe, Effective, Caring, Responsive, and Well-led? We maintain high-standard operating procedures as we prepare for regulated operations."
   },
   {
-    title: "Safeguarding Adults",
-    desc: "We enforce a zero-tolerance policy toward any form of abuse or neglect. All staff undergo mandatory safeguarding training, and we maintain immediate, transparent reporting pathways to local multi-agency safeguarding hubs (MASH) in strict compliance with the Care Act 2014."
+    title: "Adult Safeguarding & Protection",
+    desc: "We operate a strict zero-tolerance approach to any form of neglect or abuse. All carers undergo comprehensive safeguarding training, with clear whistleblowing policies and direct reporting to Northamptonshire safeguarding teams."
   },
   {
-    title: "Safer Recruitment",
-    desc: "Our safer recruitment pipeline requires Enhanced DBS disclosures, full identity validation, a detailed employment gap analysis, and at least two verified professional references. We hire based on clinical competence and core human values."
+    title: "Enhanced DBS & Safer Hiring",
+    desc: "Every carer undergoes an Enhanced Disclosure and Barring Service (DBS) check with adult barred list screening, right-to-work validation, and at least two verified professional references before entering a client's home."
   },
   {
-    title: "Staff Training & Development",
-    desc: "Our care professionals complete a comprehensive induction aligned with the UK Care Certificate. This is followed by continuous professional development (CPD) including moving and handling, dementia care, and mental health support guidance."
+    title: "Induction & Care Certificate Training",
+    desc: "Our care team completes comprehensive induction aligned with the national UK Care Certificate, covering practical moving & handling, infection prevention, dementia awareness, and emergency first aid."
   },
   {
-    title: "Medication Safety & Administration",
-    desc: "We operate a meticulous medication administration framework. Staff undergo rigorous training and practical assessments, utilizing precise Medication Administration Records (MAR) and regular audits to ensure absolute safety."
+    title: "Medication Prompts & Safety",
+    desc: "We follow robust medication management policies. Carers receive dedicated training in safe prompting and administration, maintaining clear Medication Administration Records (MAR) subject to regular audits."
   },
   {
-    title: "Confidentiality & Data Protection",
-    desc: "We are fully registered with the Information Commissioner's Office (ICO: ZC026072). We strictly adhere to GDPR and UK Data Protection legislation, ensuring all electronic and physical personal health records are securely stored and processed."
+    title: "Confidentiality & GDPR (ICO: ZC026072)",
+    desc: "Client records, medical information, and family contact details are stored securely in compliance with the Data Protection Act 2018. We maintain strict access controls and confidentiality agreements."
   },
   {
-    title: "Complaints & Transparent Feedback",
-    desc: "We view feedback as a crucial mechanism for growth. We maintain a clear, transparent, and structured complaints procedure, ensuring all feedback is acknowledged immediately, investigated thoroughly, and resolved with care and candour."
+    title: "Listening to Feedback & Complaints",
+    desc: "We encourage open, regular feedback from clients and their families. Any concern is acknowledged promptly, investigated thoroughly with complete candour, and resolved with care."
   },
   {
-    title: "Quality Assurance & Internal Audits",
-    desc: "Our clinical governance requires monthly and quarterly audits of care plans, medication sheets, and staff files. These internal audits are combined with regular client satisfaction surveys to foster a culture of continuous improvement."
+    title: "Environmental & Home Risk Assessments",
+    desc: "Before any care begins, an assessment is conducted to identify trip hazards, mobility obstacles, and equipment requirements, ensuring both client and carer safety."
   },
   {
-    title: "Proactive Risk Management",
-    desc: "Before any care begins, we perform detailed environmental and physical risk assessments. These assessments are designed to maximize personal independence while managing safety, fall risks, and mobility hazards proactively."
+    title: "Clinical Leadership Oversight",
+    desc: "Our clinical policies and reablement practices are supervised by Ida Acquah, HCPC-registered Occupational Therapist, ensuring clinical safety and evidence-based guidance in every care routine."
   },
   {
     title: "Person-Centred Care Planning",
-    desc: "Every individual receives a bespoke care package co-produced with them and their family. Our care plans recognize personal preferences, life stories, dietary choices, and religious routines, ensuring support remains personal."
-  },
-  {
-    title: "Clinical Oversight",
-    desc: "Under the leadership of Ida Acquah, our HCPC-registered Lead Occupational Therapist, all care plans are developed and reviewed with clinical precision. We focus on physical rehabilitation, cognitive stimulation, and functional independence."
+    desc: "Care plans are never one-size-fits-all. Every routine is co-created with the client and their family, capturing personal preferences, daily habits, dietary needs, and cultural values."
   }
 ];
 
 export default function CompliancePage() {
   return (
-    <div className="bg-brand-bg min-h-screen pt-4 pb-24">
+    <div className="bg-[#faf9f6] min-h-screen py-10 md:py-16">
+      
       {/* Header */}
-      <section className="container mx-auto px-6 mb-16 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <span className="text-brand-gold font-black uppercase tracking-[0.4em] text-xs mb-6 block">Professional Integrity</span>
-          <h1 className="text-6xl md:text-8xl font-outfit mb-10 text-brand-blue-dark leading-tight">
-            Governance, <span className="text-brand-blue">Safety</span> & Excellence
+      <section className="container mx-auto px-6 mb-12 text-center">
+        <div className="max-w-3xl mx-auto">
+          <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2.5">
+            Clinical Governance &amp; Safeguarding Standards
+          </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f2438] mb-4">
+            Safe, accountable, and transparent home care
           </h1>
-          <p className="text-xl text-text-muted max-w-4xl mx-auto leading-relaxed font-medium">
-            Lifewell Healthcare Ltd is built on a foundation of uncompromising safety. We are currently preparing for CQC-regulated operations, adhering to the highest UK standards of clinical governance and professional transparency.
+          <p className="text-base md:text-lg text-[#4e6074] leading-relaxed">
+            At Lifewell Healthcare Ltd, safety is the foundation of everything we do. We adhere to rigorous UK standards of clinical governance, safer recruitment, and person-centred care planning.
           </p>
-        </motion.div>
+        </div>
       </section>
 
-      {/* CQC Banner */}
-      <section className="container mx-auto px-6 mb-24">
-        <div className="bg-brand-blue-dark rounded-[5rem] p-12 lg:p-24 text-white relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,45,89,0.3)]">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-[100px] -mr-32 -mt-32"></div>
-          <div className="relative z-10 max-w-4xl">
-            <span className="text-brand-gold-soft font-black uppercase tracking-[0.3em] text-sm mb-6 block">Our Regulatory Commitment</span>
-            <h2 className="text-4xl md:text-5xl font-outfit mb-10 leading-tight">Right Support, Right Care, <span className="text-brand-gold-soft">Right Culture</span></h2>
-            <p className="text-lg text-blue-50/90 mb-12 leading-relaxed font-medium">
-              We align every operation with the Care Quality Commission (CQC) fundamental standards. Our executive governance framework ensures that our care is safe, effective, caring, responsive, and exceptionally well-led.
+      {/* CQC Alignment Banner */}
+      <section className="container mx-auto px-6 mb-16 max-w-5xl">
+        <div className="bg-[#0f2438] text-white rounded-2xl p-8 md:p-12 shadow-sm">
+          <div className="max-w-3xl">
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-3">
+              Regulatory Standards
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+              Structured around CQC fundamental standards
+            </h2>
+            <p className="text-white/80 text-sm md:text-base mb-8 leading-relaxed">
+              We design our policies, carer training, and clinical oversight around the Care Quality Commission&apos;s key lines of enquiry: Safe, Effective, Caring, Responsive, and Well-led.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                "Evidence-based clinical practices",
-                "Continuous staff professional development",
-                "Rigorous executive risk management",
-                "Person-centred outcome auditing"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-5 text-blue-50">
-                  <div className="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center shrink-0 border border-brand-gold/30">
-                    <CheckCircle className="text-brand-gold-soft" size={16} />
-                  </div>
-                  <span className="text-base font-bold tracking-wide">{item}</span>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs md:text-sm text-white/90">
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 size={16} className="text-[#b48a3c] shrink-0" />
+                <span>Evidence-based clinical guidance</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 size={16} className="text-[#b48a3c] shrink-0" />
+                <span>UK Care Certificate aligned induction</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 size={16} className="text-[#b48a3c] shrink-0" />
+                <span>Enhanced DBS checks for all care staff</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 size={16} className="text-[#b48a3c] shrink-0" />
+                <span>Regular care plan reviews &amp; MAR audits</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Principles Grid */}
-      <section className="container mx-auto px-6 py-12 mb-16">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-outfit mb-4 text-brand-blue-dark">Compliance Framework</h2>
-          <p className="text-lg text-text-muted font-medium">The pillars of our professional credibility and community trust.</p>
+      {/* 4 Pillars of Governance */}
+      <section className="container mx-auto px-6 mb-16 max-w-5xl">
+        <div className="text-center mb-10">
+          <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2">
+            Governance Pillars
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0f2438]">
+            How We Protect Those We Care For
+          </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {principles.map((item, i) => (
-            <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm card-hover-premium transition-premium">
-              <div className="w-14 h-14 bg-brand-bg rounded-2xl flex items-center justify-center text-brand-blue mb-8 shadow-inner">
-                <item.icon size={28} />
+            <div key={i} className="bg-white p-6 rounded-2xl border border-[#e6e5dd] shadow-sm">
+              <div className="w-11 h-11 bg-[#faf9f6] border border-[#e6e5dd] rounded-xl flex items-center justify-center text-[#b48a3c] mb-5">
+                <item.icon size={20} />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-brand-blue-dark">{item.title}</h3>
-              <p className="text-xs text-text-muted leading-relaxed font-medium">{item.desc}</p>
+              <h3 className="text-base font-bold mb-2 text-[#0f2438]">{item.title}</h3>
+              <p className="text-xs text-[#4e6074] leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Detailed Standards */}
-      <section className="bg-white py-24 border-y border-gray-100">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-brand-gold font-black uppercase tracking-[0.3em] text-xs mb-4 block">Standard Operating Procedures</span>
-            <h2 className="text-4xl md:text-5xl font-outfit text-brand-blue-dark">Our Core Compliance Standards</h2>
-            <p className="text-lg text-text-muted mt-4 font-medium">A thorough breakdown of how we align our care delivery with safety legislation and CQC regulations.</p>
+      {/* Detailed Standards Grid */}
+      <section className="container mx-auto px-6 mb-20 max-w-5xl">
+        <div className="bg-white rounded-2xl border border-[#e6e5dd] p-8 md:p-12 shadow-sm">
+          <div className="mb-10 text-center max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-2">
+              Standard Operating Procedures
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0f2438] mb-3">
+              Our Safety &amp; Quality Commitments
+            </h2>
+            <p className="text-xs md:text-sm text-[#4e6074]">
+              How we translate UK healthcare legislation and best practice into day-to-day visiting care.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {complianceAreas.map((area, index) => (
-              <div key={index} className="p-8 rounded-3xl bg-brand-bg border border-gray-100 hover:shadow-lg transition-premium">
-                <h4 className="text-lg font-bold text-brand-blue-dark mb-3 flex items-center gap-2">
-                  <CheckCircle size={18} className="text-brand-gold shrink-0" />
-                  {area.title}
+              <div key={index} className="p-5 rounded-xl bg-[#faf9f6] border border-[#e6e5dd]">
+                <h4 className="text-sm md:text-base font-bold text-[#0f2438] mb-2 flex items-start gap-2">
+                  <CheckCircle2 size={16} className="text-[#b48a3c] shrink-0 mt-0.5" />
+                  <span>{area.title}</span>
                 </h4>
-                <p className="text-xs text-text-muted leading-relaxed font-medium">{area.desc}</p>
+                <p className="text-xs text-[#4e6074] leading-relaxed pl-6">{area.desc}</p>
               </div>
             ))}
           </div>
@@ -165,22 +178,25 @@ export default function CompliancePage() {
       </section>
 
       {/* Duty of Candour */}
-      <section className="container mx-auto px-6 py-24">
-        <div className="bg-white rounded-[4rem] p-12 lg:p-24 border border-gray-100 shadow-xl flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/3 text-brand-blue flex justify-center">
-            <div className="w-36 h-36 bg-brand-bg rounded-full flex items-center justify-center shadow-inner">
-              <Scale size={72} strokeWidth={1.5} className="text-brand-gold" />
-            </div>
+      <section className="container mx-auto px-6 max-w-5xl">
+        <div className="bg-white rounded-2xl border border-[#e6e5dd] p-8 md:p-10 shadow-sm flex flex-col md:flex-row items-center gap-8">
+          <div className="w-16 h-16 rounded-2xl bg-[#faf9f6] border border-[#e6e5dd] flex items-center justify-center text-[#b48a3c] shrink-0">
+            <Scale size={32} />
           </div>
-          <div className="lg:w-2/3 text-center lg:text-left">
-            <span className="text-brand-gold font-black uppercase tracking-[0.3em] text-xs mb-4 block">Radical Transparency</span>
-            <h3 className="text-4xl font-bold mb-6 text-brand-blue-dark">The Duty of Candour</h3>
-            <p className="text-lg text-text-muted leading-relaxed font-medium">
-              At Lifewell Healthcare, we believe in radical transparency as a clinical imperative. Our Duty of Candour policy ensures absolute honesty with our clients and families, fostering a culture of trust, accountability, and continuous improvement. This is how we build lasting, safe, and professional partnerships.
+          <div>
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#b48a3c] block mb-1">
+              Openness &amp; Candour
+            </span>
+            <h3 className="text-xl md:text-2xl font-bold text-[#0f2438] mb-2">
+              The Duty of Candour
+            </h3>
+            <p className="text-xs md:text-sm text-[#4e6074] leading-relaxed">
+              We practice complete honesty and openness with clients and their families. If ever something does not go entirely as planned, we inform you immediately, investigate constructively, and take decisive steps to put things right. Open communication is essential to genuine care.
             </p>
           </div>
         </div>
       </section>
+
     </div>
   );
 }
