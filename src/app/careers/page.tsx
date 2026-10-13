@@ -171,7 +171,7 @@ export default function CareersPage() {
               <div>
                 <div className="flex justify-between items-start gap-4 mb-2">
                   <h3 className="text-lg font-bold text-[#0f2438]">{role.title}</h3>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#b48a3c] bg-[#faf9f6] px-2.5 py-1 rounded-md border border-[#e6e5dd] shrink-0">
+                  <span className="text-xs text-[#536479] font-medium shrink-0">
                     {role.type}
                   </span>
                 </div>
@@ -205,7 +205,7 @@ export default function CareersPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {processSteps.map((st, i) => (
               <div key={i} className="bg-white/5 border border-white/10 p-5 rounded-xl">
-                <span className="text-xl font-mono font-bold text-[#b48a3c] block mb-2">{st.step}</span>
+                <span className="text-xs font-semibold text-[#c89d4e] block mb-1.5">Step {i + 1}</span>
                 <h4 className="text-sm font-bold text-white mb-1.5">{st.title}</h4>
                 <p className="text-xs text-white/70 leading-relaxed">{st.desc}</p>
               </div>

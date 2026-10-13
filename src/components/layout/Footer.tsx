@@ -4,77 +4,71 @@ import { Heart, Mail, Phone, MapPin, Globe } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-brand-blue-dark text-white pt-20 pb-10">
+    <footer className="bg-[#0a1b2c] text-white pt-16 pb-10 border-t border-white/10">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+          
           {/* Brand Column */}
-          <div className="flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="bg-white p-2 rounded-lg">
-                <Heart className="text-brand-blue w-6 h-6" />
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="flex items-center gap-2.5">
+              <div className="bg-white/10 p-2 rounded-xl text-white">
+                <Heart className="w-5 h-5 text-[#c89d4e]" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-white leading-none">
+                <span className="text-lg font-bold tracking-tight text-white leading-tight">
                   LIFEWELL
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-brand-gold-soft font-bold">
-                  Healthcare
+                <span className="text-[10px] uppercase tracking-wider text-[#c89d4e] font-bold">
+                  Healthcare Ltd
                 </span>
               </div>
             </Link>
-            <p className="text-blue-100/70 leading-relaxed">
-              Supporting families across Northamptonshire with compassionate, dignified home care, dementia support, and OT-led rehabilitation.
+            <p className="text-white/70 text-sm leading-relaxed">
+              Providing dependable, unhurried visiting care, dementia support, and Occupational Therapy rehabilitation across Northamptonshire.
             </p>
-            <div className="flex gap-4">
+            <div className="flex items-center gap-3 pt-2">
               <a
                 href="https://wa.me/447836681415"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
+                className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/15 transition-colors"
               >
-                <Heart size={18} />
+                <Heart size={15} />
               </a>
               <a
                 href="mailto:contact@lifewellhealthcare.org"
-                aria-label="Email us"
-                className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
+                aria-label="Email"
+                className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/15 transition-colors"
               >
-                <Mail size={18} />
+                <Mail size={15} />
               </a>
               <a
                 href="tel:07836681415"
-                aria-label="Call us"
-                className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
+                aria-label="Phone"
+                className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/15 transition-colors"
               >
-                <Phone size={18} />
-              </a>
-              <a
-                href="https://www.lifewellhealthcare.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Website"
-                className="bg-white/10 p-2 rounded-full hover:bg-brand-gold transition-premium"
-              >
-                <Globe size={18} />
+                <Phone size={15} />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-brand-gold-soft">Quick Links</h4>
-            <ul className="flex flex-col gap-4 text-blue-100/70">
+            <h4 className="text-sm font-bold mb-4 text-[#c89d4e] uppercase tracking-wider">Navigation</h4>
+            <ul className="flex flex-col gap-2.5 text-sm text-white/70">
               {[
                 { name: "Home", href: "/" },
-                { name: "About Us", href: "/about" },
-                { name: "Services", href: "/services" },
-                { name: "Careers", href: "/careers" },
-                { name: "Wellbeing", href: "/wellbeing" },
-                { name: "Compliance", href: "/compliance" }
+                { name: "About Our Practice", href: "/about" },
+                { name: "Care Services", href: "/services" },
+                { name: "Community Wellbeing", href: "/wellbeing" },
+                { name: "Care Careers", href: "/careers" },
+                { name: "Governance & Safety", href: "/compliance" },
+                { name: "Care Guides & Resources", href: "/blog" },
+                { name: "Contact & Referrals", href: "/contact" }
               ].map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-brand-gold transition-premium">
+                  <Link href={link.href} className="hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -82,59 +76,68 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Core Services */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-brand-gold-soft">Our Services</h4>
-            <ul className="flex flex-col gap-4 text-blue-100/70">
-              {["Domiciliary Care", "Dementia Support", "Mental Health", "Elderly Support", "Companionship", "Respite Care"].map((service) => (
-                <li key={service}>
-                  <Link href="/services" className="hover:text-brand-gold transition-premium">
-                    {service}
+            <h4 className="text-sm font-bold mb-4 text-[#c89d4e] uppercase tracking-wider">Our Services</h4>
+            <ul className="flex flex-col gap-2.5 text-sm text-white/70">
+              {[
+                { name: "Visiting Domiciliary Care", href: "/services#domiciliary" },
+                { name: "Dignified Personal Care", href: "/services#personal-care" },
+                { name: "Dementia & Memory Support", href: "/services#dementia" },
+                { name: "Hospital Discharge Recovery", href: "/services#discharge" },
+                { name: "Companionship & Sitting", href: "/services#companionship" },
+                { name: "OT Rehabilitation Support", href: "/services#rehabilitation" },
+                { name: "Respite for Family Carers", href: "/services#respite-care" }
+              ].map((service) => (
+                <li key={service.name}>
+                  <Link href={service.href} className="hover:text-white transition-colors">
+                    {service.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Details */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-brand-gold-soft">Get in Touch</h4>
-            <ul className="flex flex-col gap-6 text-blue-100/70">
-              <li className="flex items-start gap-3">
-                <MapPin className="text-brand-gold-soft shrink-0" size={20} />
+            <h4 className="text-sm font-bold mb-4 text-[#c89d4e] uppercase tracking-wider">Registered Office</h4>
+            <ul className="flex flex-col gap-3.5 text-sm text-white/70">
+              <li className="flex items-start gap-2.5">
+                <MapPin className="text-[#c89d4e] shrink-0 mt-0.5" size={17} />
                 <span>64 Broadway,<br />Northampton, NN1 4SQ</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="text-brand-gold-soft shrink-0" size={20} />
-                <a href="tel:07836681415" className="hover:text-brand-gold transition-premium">07836 681415</a>
+              <li className="flex items-center gap-2.5">
+                <Phone className="text-[#c89d4e] shrink-0" size={17} />
+                <a href="tel:07836681415" className="hover:text-white transition-colors font-semibold text-white">
+                  07836 681415
+                </a>
               </li>
-              <li className="flex items-center gap-3 min-w-0">
-                <Mail className="text-brand-gold-soft shrink-0" size={20} />
-                <a href="mailto:contact@lifewellhealthcare.org" className="hover:text-brand-gold transition-premium break-all">contact@lifewellhealthcare.org</a>
+              <li className="flex items-center gap-2.5 min-w-0">
+                <Mail className="text-[#c89d4e] shrink-0" size={17} />
+                <a href="mailto:contact@lifewellhealthcare.org" className="hover:text-white transition-colors break-all">
+                  contact@lifewellhealthcare.org
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Emergency Disclaimer */}
-        <div className="mb-8 p-6 bg-white/5 rounded-2xl border border-white/10 text-xs text-blue-100/60 leading-relaxed max-w-4xl">
-          <span className="font-extrabold text-brand-gold-soft uppercase tracking-wider block mb-1">Safety & Emergency Notice</span>
-          Lifewell Healthcare Ltd is not an emergency medical service. If someone is in immediate danger, requires urgent medical help, or is experiencing a psychiatric crisis, please dial <strong className="text-white">999</strong> immediately or contact NHS <strong className="text-white">111</strong>. Our support lines and home care services are designed for planned, non-emergency personal support, domiciliary care, and therapeutic wellbeing facilitation.
+        {/* Medical / Safety Notice */}
+        <div className="mb-8 p-4 bg-white/5 rounded-xl border border-white/10 text-xs text-white/60 leading-relaxed max-w-4xl">
+          <strong className="text-white">Emergency Notice:</strong> Lifewell Healthcare Ltd provides planned community home care. If someone is in immediate medical danger, please call <strong>999</strong> or contact NHS <strong>111</strong>.
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 text-xs text-blue-100/40 font-medium">
-            <p>&copy; {new Date().getFullYear()} Lifewell Healthcare Ltd.</p>
-            <p>Company No: 14638409</p>
-            <p>ICO Registered: ZC026072</p>
-            <div className="flex gap-6">
-              <Link href="/privacy" className="hover:text-white transition-premium">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-white transition-premium">Terms of Service</Link>
-            </div>
+        {/* Bottom Bar */}
+        <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+          <div className="flex flex-wrap items-center gap-4 md:gap-6">
+            <span>&copy; {new Date().getFullYear()} Lifewell Healthcare Ltd</span>
+            <span>Company No: 14638409</span>
+            <span>ICO: ZC026072</span>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
-          <div className="flex items-center gap-3 px-5 py-2 bg-white/5 rounded-full border border-white/10">
-            <span className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></span>
-            <span className="text-[10px] uppercase tracking-[0.2em] font-black text-blue-100/60">Preparing for CQC-regulated operations</span>
+          <div className="text-white/60 text-xs">
+            Preparing for CQC-regulated operations • Health and Social Care Act 2008
           </div>
         </div>
       </div>

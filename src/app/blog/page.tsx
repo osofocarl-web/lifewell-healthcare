@@ -184,7 +184,7 @@ export default function BlogPage() {
               >
                 <div>
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#b48a3c] bg-[#faf9f6] px-2.5 py-1 rounded-md border border-[#e6e5dd]">
+                    <span className="text-xs font-semibold text-[#b48a3c]">
                       {topic.category}
                     </span>
                     <span className="flex items-center gap-1 text-xs text-[#536479]">

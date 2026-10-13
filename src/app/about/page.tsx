@@ -165,7 +165,6 @@ export default function AboutPage() {
             },
           ].map((val, i) => (
             <div key={i} className="p-6 rounded-2xl bg-white border border-[#e6e5dd] shadow-sm">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#b48a3c] block mb-2 font-mono">0{i + 1}</span>
               <h3 className="text-lg font-bold mb-2 text-[#0f2438]">{val.title}</h3>
               <p className="text-xs md:text-sm text-[#4e6074] leading-relaxed">{val.desc}</p>
             </div>
