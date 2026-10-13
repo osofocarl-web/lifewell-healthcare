@@ -126,7 +126,10 @@ export default function HomePage() {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight tracking-tight">
+            <h1 
+              style={{ color: '#ffffff' }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight tracking-tight"
+            >
               Personalised, compassionate care in the comfort of your own home.
             </h1>
 

@@ -55,7 +55,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--brand-blue);
   font-family: var(--font-heading), var(--font-sans), sans-serif;
   letter-spacing: -0.02em;
   font-weight: 700;
